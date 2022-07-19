@@ -4477,38 +4477,39 @@ textarea.form-control-lg {
 }
 
 .navbar-dark .navbar-brand {
-  color: #fff;
+  color: white;
 }
 .navbar-dark .navbar-brand:hover, .navbar-dark .navbar-brand:focus {
-  color: #fff;
+  color:white;
 }
-.navbar-dark .navbar-nav .nav-link {
-  color: rgba(255, 255, 255, 0.55);
+.navbar-dark .navbar-nav .nav-item .nav-link {
+  color: white;
+  
 }
 .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
-  color: rgba(255, 255, 255, 0.75);
+  color:white;
+  background-color: #FC8370;
 }
 .navbar-dark .navbar-nav .nav-link.disabled {
-  color: rgba(255, 255, 255, 0.25);
+  color: white;
 }
 .navbar-dark .navbar-nav .show > .nav-link,
 .navbar-dark .navbar-nav .nav-link.active {
-  color: #fff;
+  color: white;
 }
 .navbar-dark .navbar-toggler {
-  color: rgba(255, 255, 255, 0.55);
-  border-color: rgba(255, 255, 255, 0.1);
+  color: #FC8370;
 }
 .navbar-dark .navbar-toggler-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.55%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
-.navbar-dark .navbar-text {
-  color: rgba(255, 255, 255, 0.55);
+.navbar-dark .navbar-text .nav-item{
+  color: white;
 }
 .navbar-dark .navbar-text a,
 .navbar-dark .navbar-text a:hover,
 .navbar-dark .navbar-text a:focus {
-  color: #fff;
+  color: white;
 }
 
 .card {
@@ -11361,7 +11362,7 @@ p {
   text-transform: uppercase;
 }
 #mainNav .navbar-brand img {
-  height: 1.5rem;
+  height: 3rem;
 }
 #mainNav .navbar-nav .nav-item .nav-link {
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -11783,8 +11784,108 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 
 
+
 /* New changes */
 .active-nav{
   background-color: #FC8370;
   border-radius: 45%;
+}
+
+/* about us */
+
+.about-video{
+  /* position:absolute;
+  left: 0;
+  top: 0; */
+  width: 435px;
+  height:600px;
+  border-radius: 100%;
+  clip-path: ellipse(45% 45% at 50% 50%);
+  border: 2px solid;
+  box-shadow: 5px 10px #888888;
+  margin-left: 5%;
+  margin-right: 5%;
+
+ }
+
+.about-text{
+  margin:5%;
+  border-radius: 3%;
+  background-color: #FC8370;
+ }
+ .about-heading{
+  color:#383838;
+  font-weight: bold;
+  
+ }
+
+
+ /* login page */
+
+ .login-container{
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.login-logo{
+  position: relative;
+  margin-left: -41.5%;
+}
+.login-logo img{
+  position: absolute;
+  width: 20%;
+  margin-top: 19%;
+  background: #282726;
+  border-radius: 4.5rem;
+  padding: 5%;
+}
+.login-form-1{
+  padding: 9%;
+  background:#282726;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+  text-align: center;
+  margin-bottom:12%;
+  color:#fff;
+}
+.login-form-2{
+  padding: 9%;
+  background: #FC8370;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+  text-align: center;
+  margin-bottom:12%;
+  color: #fff;
+}
+.btnSubmit{
+  font-weight: 600;
+  width: 50%;
+  color: #282726;
+  background-color: #fff;
+  border: none;
+  border-radius: 1.5rem;
+  padding:2%;
+}
+.btnForgetPwd{
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+}
+.btnForgetPwd:hover{
+  text-decoration:none;
+  color:#fff;
+}
+
+.register{
+  border: 1px transparent;
+  border-radius: 30%;
+  background-color: #FC8370;
+  
+}
+.aregister{
+  margin:30px;
+  font-size: 1rem;
+  color:black;
+  text-decoration: none;
 }
