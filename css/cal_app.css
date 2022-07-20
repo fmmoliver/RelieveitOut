@@ -1,0 +1,114 @@
+.calapp{
+    margin-top: 40px;
+}
+
+.rate img{
+    margin: 7px;
+    padding-bottom: 5px;
+}
+
+
+.photoCircle{
+    width: 140px;
+    height: 140px;
+    background-color: #FB7647;
+    border-radius: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.photo {
+    position: relative;
+}
+.photoShape{
+    background-color: #FB7647;
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    z-index: -1;
+   
+
+}
+.name p {
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+}
+
+.name :nth-child(2){
+    font-size: 24px;
+    line-height: 29px;
+}
+
+
+.heading {
+    display: grid;
+    grid-template-columns: 1fr 1fr 3fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.rate p{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+.calendar-border{
+    background: #CDDECD;
+    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    border-radius: 20px;
+    /* height: 500px; */
+    padding: 3rem;
+}
+
+.calendar {
+    background: white;
+    z-index: 2;
+    height: -webkit-fill-available;
+    border: 3px solid lightgrey;
+    max-width: none !important;
+}
+
+@media only screen and (max-width: 990px) {
+    .name p, .name :nth-child(2){ 
+    font-size: 25px;
+    line-height: 26px;
+ } 
+ .heading{
+    grid-template-columns: 1fr 2fr 0fr 2fr;
+    grid-column-gap:20px ;
+ }
+ 
+
+    .calendar-border{
+        margin: 15px;
+    }
+.container{
+    max-width: 98%;
+}
+}
+
+@media (max-width: 768px){
+    
+    .photoShape{
+        width: 50px;
+        height: 50px;
+     }
+     .photoCircle{
+        width: 100px;
+        height: 100px;
+     }
+     .name p, .name :nth-child(2),.rate p{ 
+        font-size: 20px;
+        line-height: 18px;
+     } 
+     .calapp{
+        margin-top: 100px;
+    }
+}

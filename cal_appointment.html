@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Relieve it Out</title>
+        <title>Agency - Start Bootstrap Theme</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
@@ -17,7 +17,36 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
         <link href="css/styles.css" rel="stylesheet" />
-        <link href="css/ourTeam.css" rel="stylesheet" />
+        <!-- <link href="css/ourTeam.css" rel="stylesheet" /> -->
+        <link href="css/cal_app.css" rel="stylesheet" />
+        <link href="css/calendar.css" rel="stylesheet" />
+
+
+        <link rel="stylesheet" href="./css/CalendarPicker.style.css">
+        <style>
+            body {
+                display: grid;
+                justify-items: center;
+                align-content: center;
+                min-height: 100vh;
+                padding: 0;
+                margin: 0;
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+                    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+                    sans-serif;
+            }
+           
+            #myCalendarWrapper {
+                width: inherit;
+                border: 1px dashed black;
+                padding: 10px;
+                position: relative;
+                font-size: 1rem;
+                margin: 0 auto;
+            }
+    
+    
+        </style>
     </head>
     <body id="page-top" style=" background-image: url(images/background.png); background-repeat: no-repeat; background-size: 100%;">
         
@@ -26,15 +55,15 @@
             <div class="container">
                 <a class="navbar-brand" href="#page-top"><img src="images/logo_final.png" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <!-- Menu -->
+                    Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active-nav" href="our_team.html">Our Team</a></li>
+                        <li class="nav-item"><a class="nav-link" href="our_team.html">Our Team</a></li>
                         <li class="nav-item"><a class="nav-link" href="my_appointments.html">My Appointments</a></li>
-                        <li class="nav-item"><a class="nav-link" href="crisis_line.html">Crisis Line</a></li>
+                        <li class="nav-item"><a class="nav-link active-nav" href="crisis_line.html">Crisis Line</a></li>
                         <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
                         <li class="nav-item"><a class="nav-link " href="login.html">Login/Sign Up</a></li>
                     </ul>
@@ -45,89 +74,35 @@
        <!-- Body -->
 
        <section>
-        <div class="container team">
-            <div class="row">
-              <div class="col col-lg-2 sidebar">
-                <h4>All Especialities</h4>
-                <p>Therapy</p>
-                <p>Another one</p>
-                <p>Another one</p>
-              </div>
-              <div class="col col-lg-1 "></div>
-             
-              <div class="col col-lg-9" style="position: relative;">
-                <button class="filter" >Filter the options   <img src="icons/sliders.svg" alt="..." /></button>
-                <div class="list">
-                    <div class="item col-lg-12">
-                        <div class="photo"> 
-                            <div  class="photoShape"></div>
-                            <div class="photoCircle"> 
-                                <p>Photo</p>
-                            </div>
+        <div class="container calapp">
+            <div class="heading">
+               
+                    <div class="photo"> 
+                        <div  class="photoShape"></div>
+                        <div class="photoCircle"> 
+                            <p>Photo</p>
                         </div>
-                        <div class="rate"> 
-                            <p>Rate      <img src="icons/star.svg" alt="..." />      4.9</p> 
-                        </div>
-                        <div class="name">  
-                            <p>dr. John Doe</p>
-                            <p>Therapist</p> 
-                        </div>
-                        <div class="appBtn"> <a href="cal_appointment.html">Make an appointment</a></div>
                     </div>
-                    <div class="item  col-lg-12">
-                        <div class="photo"> 
-                            <div  class="photoShape"></div>
-                            <div class="photoCircle"> 
-                                <p>Photo</p>
-                            </div>
-                        </div>
-                        <div class="rate"> 
-                            <p>Rate      <img src="icons/star.svg" alt="..." />    4.9</p> 
-                        </div>
-                        <div class="name">  
-                            <p>dr. John Doe</p>
-                            <p>Therapist</p> 
-                        </div>
-                        <div class="appBtn">  <a href="cal_appointment.html">Make an appointment</a></div>
+                    <div class="name">  
+                        <p>dr. John Doe</p>
+                        <p>Therapist</p> 
                     </div>
-                    <div class="item  col-lg-12">
-                        <div class="photo"> 
-                            <div  class="photoShape"></div>
-                            <div class="photoCircle"> 
-                                <p>Photo</p>
-                            </div>
-                        </div>
-                        <div class="rate"> 
-                            <p>Rate      <img src="icons/star.svg" alt="..." />   4.9</p> 
-                        </div>
-                        <div class="name">  
-                            <p>dr. John Doe</p>
-                            <p>Therapist</p> 
-                        </div>
-                        <div class="appBtn">  <a href="cal_appointment.html">Make an appointment</a></div>
-                    </div>
-                    <div class="item  col-lg-12">
-                        <div class="photo"> 
-                            <div  class="photoShape"></div>
-                            <div class="photoCircle"> 
-                                <p>Photo</p>
-                            </div>
-                        </div>
-                        <div class="rate"> 
-                            <p>Rate      <img src="icons/star.svg" alt="..." />    4.9</p> 
-                        </div>
-                        <div class="name">  
-                            <p>dr. John Doe</p>
-                            <p>Therapist</p> 
-                        </div>
-                        <div class="appBtn"> <a href="cal_appointment.html">Make an appointment</a></div>
-                    </div>
+                    <div></div>
+                <div class="rate"> 
+                    <p>Rate      <img src="icons/star.svg" alt="..." />    4.9</p> 
                 </div>
-              </div>
-              
+                
             </div>
-          </div>
-          </section>
+            <div class="calendar-border">
+                <div class="calendarsec">
+                    <!-- <a href="example.html">werwe</a> -->
+                    <!-- <div id="myCalendarWrapper"></div> -->
+                    <div class="calendar"></div>
+                </div>
+            </div>
+        
+        </div>
+       </section>
 
         <!-- Footer-->
         <footer class="footer py-4">
@@ -167,4 +142,34 @@
          <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
        
          </body>
+            <script src="./js/CalendarPicker.js"></script>
+            <script src="./js/caljs.js"></script>
+
+            <script>
+                const nextYear = new Date().getFullYear() + 1;
+                const myCalender = new CalendarPicker('#myCalendarWrapper', {
+                    // If max < min or min > max then the only available day will be today.
+                    min: new Date(),
+                    max: new Date(nextYear, 10), // NOTE: new Date(nextYear, 10) is "Nov 01 <nextYear>"
+                    locale: 'en-US', // Can be any locale or language code supported by Intl.DateTimeFormat, defaults to 'en-US'
+                    showShortWeekdays: false // Can be used to fit calendar onto smaller (mobile) screens, defaults to false
+                });
+
+                const currentDateElement = document.getElementById('current-date');
+                currentDateElement.textContent = myCalender.value;
+
+                const currentDayElement = document.getElementById('current-day');
+                currentDayElement.textContent = myCalender.value.getDay();
+
+                const currentToDateString = document.getElementById('current-datestring');
+                currentToDateString.textContent = myCalender.value.toDateString();
+
+                myCalender.onValueChange((currentValue) => {
+                    currentDateElement.textContent = currentValue;
+                    currentDayElement.textContent = currentValue.getDay();
+                    currentToDateString.textContent = currentValue.toDateString();
+
+                    console.log(`The current value of the calendar is: ${currentValue}`);
+                });
+            </script>
          </html>
