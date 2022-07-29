@@ -1,0 +1,61 @@
+<section>
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-md-6 login-form-1">
+                <h3>Sign Up As CLIENT</h3>
+                <form (ngSubmit)="signUpClient(newClientUser)">
+                    <div class="form-group">
+                        <input [(ngModel)]="newClientUser.email" name="email" id="email" type="text" class="form-control" placeholder="Your Email *" required />
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="newClientUser.username" name="username" id="username" type="text" class="form-control" placeholder="Your Username *"  required />
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="newClientUser.password" name="password" id="password" type="password" class="form-control" placeholder="Your Password *" required />
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="newClientUser.password" name="confirmpassword" id="confirmpassword" type="password" class="form-control" placeholder="Confirm Your Password *" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="buttonsignup" class="btnSubmit" value="Sign Up" />
+                    </div>
+                    <div class="form-group">
+                        <a routerLink="/login" class="btnForgetPwd">Login</a>
+                    </div>
+                    <div class="form-group">
+                        <a routerLink="#" class="btnForgetPwd">Forget Password?</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 login-form-2">
+                <div class="login-logo">
+                    <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+                </div>
+                <h3>Sign Up As PROFESSIONAL</h3>
+                <form (ngSubmit)="signUpProfessional(newProfessionalUser)">
+                    <div class="form-group">
+                        <input [(ngModel)]="newProfessionalUser.email" name="email" type="text" class="form-control" placeholder="Your Email *" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="newProfessionalUser.username" name="username" type="text" class="form-control" placeholder="Your Username *" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="newProfessionalUser.password" name="password" type="password" class="form-control" placeholder="Your Password *" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="newProfessionalUser.password" name="confirmpassword" type="password" class="form-control" placeholder="Confirm Your Password *" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btnSubmit" value="Sign Up" />
+                    </div>
+                    <div class="form-group">
+                        <a routerLink="/login" class="btnForgetPwd">Login</a>
+                    </div>
+                    <div class="form-group">
+                        <a href="#" class="btnForgetPwd" value="Login">Forget Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
