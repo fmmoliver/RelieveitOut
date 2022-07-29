@@ -12055,6 +12055,14 @@ button.toast-close-button {
   background-color: #000000;
   opacity: 0.4;
 }
+
+.adminlogin {
+  color: #fff;
+  position: absolute;
+  right: 35px;
+  bottom: 30px;
+}
+
 /* Responsive Design */
 @media all and (max-width: 240px) {
   .toast-container .ngx-toastr.div {

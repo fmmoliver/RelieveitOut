@@ -1,0 +1,27 @@
+<section>
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-md-6 login-form-1 mx-auto">
+                <h3>Login As Admin</h3>
+                <form (ngSubmit)="LoginAdmin(AdminUser)">
+                    <div class="form-group">
+                        <input type="text" [(ngModel)]="AdminUser.email" name="email" id="email" class="form-control" placeholder="Your Email *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" [(ngModel)]="AdminUser.password" name="password" id="password" class="form-control" placeholder="Your Password *" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btnSubmit" value="Login" />
+                    </div>
+                    <div class="form-group">
+                        <a routerLink="/signup" class="btnForgetPwd">Sign Up</a>
+                    </div>
+                    <div class="form-group">
+                        <a routerLink="#" class="btnForgetPwd">Forget Password?</a>
+                    </div>
+                    <a routerLink="/adminsignup" class="adminlogin">Admin Signup</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

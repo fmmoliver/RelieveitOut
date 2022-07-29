@@ -3,6 +3,7 @@ import { User } from '../models/user';
 import { UserService } from '../services/userservice';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private UserService: UserService, private router: Router, private toastr: ToastrService) { }
+  constructor(private UserService: UserService, private router: Router, private toastr: ToastrService, private cookieService: CookieService) { }
   public ClientUser: User = {
     password: '',
     email: '',
@@ -35,7 +36,8 @@ export class LoginComponent implements OnInit {
       this.UserService.loginUser(newUser).then((response) => {
         if(response) {
           this.toastr.success('Client Logged In Successfully !!!!', 'Login Success');
-          this.router.navigateByUrl('/clientdashboard');
+          this.cookieService.set('userdetails', JSON.stringify(response));
+          this.router.navigateByUrl('/appointments');
         } else {
           this.toastr.error('Invalid Login Credentials !!!!', 'Login Failed');
         }
@@ -52,7 +54,7 @@ export class LoginComponent implements OnInit {
       this.UserService.loginUser(newUser).then((response) => {
         if(response) {
           this.toastr.success('Professional Logged In Successfully !!!!', 'Login Success');
-          this.router.navigateByUrl('/professionaldashboard');
+          this.router.navigateByUrl('/ourteam');
         } else {
           this.toastr.error('Invalid Login Credentials !!!!', 'Login Failed');
         }

@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CookieService } from 'ngx-cookie-service';
 
 import { AppComponent } from './app.component';
 import { FrameworkComponent } from './framework/framework.component';
@@ -16,8 +17,9 @@ import { AppointmentsComponent } from './appointments/appointments.component';
 import { CrisislineComponent } from './crisisline/crisisline.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { SignupComponent } from './signup/signup.component';
-import { ProfessionaldashboardComponent } from './professionaldashboard/professionaldashboard.component';
-import { ClientdashboardComponent } from './clientdashboard/clientdashboard.component'
+import { AdminsignupComponent } from './adminsignup/adminsignup.component';
+import { AdminloginComponent } from './adminlogin/adminlogin.component';
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component'
 
 @NgModule({
   declarations: [
@@ -29,8 +31,9 @@ import { ClientdashboardComponent } from './clientdashboard/clientdashboard.comp
     CrisislineComponent,
     AboutusComponent,
     SignupComponent,
-    ProfessionaldashboardComponent,
-    ClientdashboardComponent
+    AdminsignupComponent,
+    AdminloginComponent,
+    AdmindashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +49,12 @@ import { ClientdashboardComponent } from './clientdashboard/clientdashboard.comp
       { path: 'crisis', component: CrisislineComponent },
       { path: 'about', component: AboutusComponent },
       { path: 'signup', component: SignupComponent },
-      { path: 'clientdashboard', component: ClientdashboardComponent },
-      { path: 'professionaldashboard', component: ProfessionaldashboardComponent }
+      { path: 'adminlogin', component: AdminloginComponent },
+      { path: 'adminsignup', component: AdminsignupComponent },
+      { path: 'admindashboard', component: AdmindashboardComponent }
     ])
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }, CookieService],
   bootstrap: [FrameworkComponent]
 })
 export class AppModule { }
