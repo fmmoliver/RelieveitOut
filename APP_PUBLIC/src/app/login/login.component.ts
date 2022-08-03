@@ -36,16 +36,11 @@ export class LoginComponent implements OnInit {
       this.UserService.loginUser(newUser).then((response) => {
         if(response) {
           this.toastr.success('Client Logged In Successfully !!!!', 'Login Success');
-<<<<<<< HEAD
           localStorage.setItem("userDeatils",JSON.stringify(response))
           localStorage.setItem("isloggedIn",JSON.stringify(true))
           localStorage.setItem("isClient",JSON.stringify(true))
-          this.router.navigateByUrl('/clientdashboard');
-
-=======
-          this.cookieService.set('userdetails', JSON.stringify(response));
           this.router.navigateByUrl('/appointments');
->>>>>>> 82441842bdfda97feed27a74b508258a21333e65
+
         } else {
           this.toastr.error('Invalid Login Credentials !!!!', 'Login Failed');
         }
@@ -62,15 +57,7 @@ export class LoginComponent implements OnInit {
       this.UserService.loginUser(newUser).then((response) => {
         if(response) {
           this.toastr.success('Professional Logged In Successfully !!!!', 'Login Success');
-<<<<<<< HEAD
-          localStorage.setItem("userDeatils",JSON.stringify(response))
-          localStorage.setItem("isloggedIn",JSON.stringify(true))
-          localStorage.setItem("isClient",JSON.stringify(false))
-          this.router.navigateByUrl('/professionaldashboard');
-
-=======
           this.router.navigateByUrl('/ourteam');
->>>>>>> 82441842bdfda97feed27a74b508258a21333e65
         } else {
           this.toastr.error('Invalid Login Credentials !!!!', 'Login Failed');
         }
