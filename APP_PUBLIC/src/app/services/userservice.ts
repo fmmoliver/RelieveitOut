@@ -28,7 +28,8 @@ export class UserService {
         console.log(error, 'error')
     }
     getuserDetails() {
-        return this.http.get(this.APIURL + '/users')
+        let req = {}
+        return this.http.post(this.APIURL + '/users',req)
            
     }
 

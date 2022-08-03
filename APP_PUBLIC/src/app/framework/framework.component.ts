@@ -7,15 +7,15 @@ import { CookieService } from 'ngx-cookie-service';
   styleUrls: ['./framework.component.css']
 })
 export class FrameworkComponent implements OnInit {
-  isloggedIn = false;
-  constructor() { 
-    console.log("checks");
-    
-  }
+  private IsloggedIn = false;
+  constructor(private cookieService: CookieService) { }
 
   ngOnInit(): void {
-  this.isloggedIn = JSON.parse(localStorage.getItem("isloggedIn"));
-
+    if(this.cookieService.get('userdetails')) {
+      this.IsloggedIn = true
+    } else {
+      this.IsloggedIn = false
+    }
   }
 
 }

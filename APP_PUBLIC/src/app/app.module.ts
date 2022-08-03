@@ -68,7 +68,8 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
       {path: 'create-appointment', component:CreateAppointmentComponent}
     ])
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }, CookieService],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  providers: [CookieService],
   bootstrap: [FrameworkComponent]
 })
 export class AppModule { }
