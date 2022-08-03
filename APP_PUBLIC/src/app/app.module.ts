@@ -34,8 +34,6 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
     CrisislineComponent,
     AboutusComponent,
     SignupComponent,
-    ProfessionaldashboardComponent,
-    ClientdashboardComponent,
     AdminsignupComponent,
     AdminloginComponent,
     AdmindashboardComponent,
