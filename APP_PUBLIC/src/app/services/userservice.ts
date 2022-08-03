@@ -28,4 +28,12 @@ export class UserService {
         console.log(error, 'error')
     }
 
+    getUsers(newUser: User): Promise<void | User> {
+        return this.http.post(this.APIURL + '/users', newUser)
+            .toPromise()
+            .then(response => response as User)
+            .catch(this.handleError)
+    }
+
+    
 }

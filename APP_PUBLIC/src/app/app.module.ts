@@ -8,6 +8,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
 
+
 import { AppComponent } from './app.component';
 import { FrameworkComponent } from './framework/framework.component';
 import { LoginComponent } from './login/login.component';
@@ -20,6 +21,8 @@ import { SignupComponent } from './signup/signup.component';
 import { AdminsignupComponent } from './adminsignup/adminsignup.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component'
+import { CreateAppointmentComponent } from './create-appointment/create-appointment.component'
+
 
 @NgModule({
   declarations: [
@@ -31,9 +34,12 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
     CrisislineComponent,
     AboutusComponent,
     SignupComponent,
+    ProfessionaldashboardComponent,
+    ClientdashboardComponent,
     AdminsignupComponent,
     AdminloginComponent,
-    AdmindashboardComponent
+    AdmindashboardComponent,
+    CreateAppointmentComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +57,8 @@ import { AdmindashboardComponent } from './admindashboard/admindashboard.compone
       { path: 'signup', component: SignupComponent },
       { path: 'adminlogin', component: AdminloginComponent },
       { path: 'adminsignup', component: AdminsignupComponent },
-      { path: 'admindashboard', component: AdmindashboardComponent }
+      { path: 'admindashboard', component: AdmindashboardComponent },
+      {path: 'create-appointment', component:CreateAppointmentComponent}
     ])
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }, CookieService],

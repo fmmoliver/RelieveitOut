@@ -5,11 +5,11 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-ourteam',
-  templateUrl: './ourteam.component.html',
-  styleUrls: ['./ourteam.component.css']
+  selector: 'app-create-appointment',
+  templateUrl: './create-appointment.component.html',
+  styleUrls: ['./create-appointment.component.css']
 })
-export class OurteamComponent implements OnInit {
+export class CreateAppointmentComponent implements OnInit {
 
   professionals : User[]
   public ProfessionalUser: User = {

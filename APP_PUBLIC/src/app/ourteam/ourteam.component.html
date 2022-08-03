@@ -14,21 +14,24 @@
          
       <div class="col col-lg-9" style="position: relative;">
         <button class="filter" >Filter the options   <img src="assets/icons/sliders.svg" alt="..." /></button>
-        <div class="list">
-          <div class="item col-lg-12">
+        <div class="list"> 
+          <div class="item col-lg-12"  *ngFor="let professional of professionals;">
             <div class="photo"> 
                 <div class="photoCircle"><img src="assets/images/photo2.png" alt="..."/></div>
             </div>
             <div class="rate"> 
               <p>Rate      <img src="assets/icons/star.svg" alt="..." />      4.9</p> 
             </div>
-            <div class="name">  
-              <p>dr. John Doe 1</p>
-              <h6>Art Therapist</h6> 
+            <div class="name">   
+              <p><strong>{{professional.username}}</strong></p>
+              <h6>{{professional.typeOfService}}</h6> 
             </div>
-            <div class="appBtn"> <a href="cal_appointment.html">Make an appointment</a></div>
-          </div>
-          <div class="item  col-lg-12">
+            <div class="appBtn"> <a routerLink= "{{'/create-appointment'}}">Make an appointment</a></div>
+           </div>
+
+           <!-- "{{'/create-appointment/' + professional._id }}         -->
+<!--            
+          <div class="item  col-lg-12"> 
             <div class="photo"> 
               <div class="photoCircle"> 
                 <p>Photo</p>
@@ -72,10 +75,12 @@
               <h6>Cognitive Behavioural</h6> 
             </div>
             <div class="appBtn"> <a href="cal_appointment.html">Make an appointment</a></div>
-          </div>
+          </div> 
         </div>
-      </div>
+      </div> -->  
 
+      </div>
+      </div>
     </div>
   </div>
 </section>

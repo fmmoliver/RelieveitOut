@@ -6,7 +6,13 @@ const userSchema = new mongoose.Schema({
     password: { type: String },
     activeuser: { type: Boolean, required: true, default: true },
     image: { type: String, required: false },
-    email: { type: String, required: true }
+    email: { type: String, required: true },
+    typeOfService: {type: String, required: false},
+    city:  {type: String, required: false},
+    Price: {type: String, required: false}
 });
+
+
+
 
 mongoose.model('user', userSchema, 'user')
