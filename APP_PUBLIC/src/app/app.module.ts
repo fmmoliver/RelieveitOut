@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA , NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { APP_BASE_HREF } from '@angular/common';
@@ -17,40 +17,37 @@ import { CrisislineComponent } from './crisisline/crisisline.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfessionaldashboardComponent } from './professionaldashboard/professionaldashboard.component';
-import { ClientdashboardComponent } from './clientdashboard/clientdashboard.component'
+import { ClientdashboardComponent } from './clientdashboard/clientdashboard.component';
+import { MainmenuComponent } from './mainmenu/mainmenu.component';
+import { FooterComponent } from './footer/footer.component'
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    MainmenuComponent,
     FrameworkComponent,
-    LoginComponent,
+    LoginComponent,HomepageComponent,
     OurteamComponent,
     AppointmentsComponent,
     CrisislineComponent,
     AboutusComponent,
     SignupComponent,
     ProfessionaldashboardComponent,
-    ClientdashboardComponent
+    ClientdashboardComponent,
+
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    HttpClientModule,AppRoutingModule,
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    RouterModule.forRoot([
-      { path: '', component: HomepageComponent },
-      { path: 'login', component: LoginComponent },
-      { path: 'ourteam', component: OurteamComponent },
-      { path: 'appointments', component: AppointmentsComponent },
-      { path: 'crisis', component: CrisislineComponent },
-      { path: 'about', component: AboutusComponent },
-      { path: 'signup', component: SignupComponent },
-      { path: 'clientdashboard', component: ClientdashboardComponent },
-      { path: 'professionaldashboard', component: ProfessionaldashboardComponent }
-    ])
-  ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
-  bootstrap: [FrameworkComponent]
+
+  ],  
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+  // providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

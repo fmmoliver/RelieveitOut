@@ -6,10 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./framework.component.css']
 })
 export class FrameworkComponent implements OnInit {
-
-  constructor() { }
+  isloggedIn = false;
+  constructor() { 
+    console.log("checks");
+    
+  }
 
   ngOnInit(): void {
+  this.isloggedIn = JSON.parse(localStorage.getItem("isloggedIn"));
+
   }
 
 }

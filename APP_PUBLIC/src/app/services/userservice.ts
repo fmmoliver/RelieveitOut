@@ -27,5 +27,9 @@ export class UserService {
     private handleError(error: any) {
         console.log(error, 'error')
     }
+    getuserDetails() {
+        return this.http.get(this.APIURL + '/users')
+           
+    }
 
 }
