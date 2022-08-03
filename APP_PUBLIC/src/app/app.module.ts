@@ -18,19 +18,16 @@ import { AppointmentsComponent } from './appointments/appointments.component';
 import { CrisislineComponent } from './crisisline/crisisline.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { SignupComponent } from './signup/signup.component';
-<<<<<<< HEAD
 import { ProfessionaldashboardComponent } from './professionaldashboard/professionaldashboard.component';
 import { ClientdashboardComponent } from './clientdashboard/clientdashboard.component';
 import { MainmenuComponent } from './mainmenu/mainmenu.component';
 import { FooterComponent } from './footer/footer.component'
 import { AppRoutingModule } from './app-routing.module';
-=======
 import { AdminsignupComponent } from './adminsignup/adminsignup.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component'
 import { CreateAppointmentComponent } from './create-appointment/create-appointment.component'
 
->>>>>>> 82441842bdfda97feed27a74b508258a21333e65
 
 @NgModule({
   declarations: [
@@ -45,15 +42,11 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
     SignupComponent,
     ProfessionaldashboardComponent,
     ClientdashboardComponent,
-<<<<<<< HEAD
-
-    FooterComponent
-=======
+    FooterComponent,
     AdminsignupComponent,
     AdminloginComponent,
     AdmindashboardComponent,
     CreateAppointmentComponent
->>>>>>> 82441842bdfda97feed27a74b508258a21333e65
   ],
   imports: [
     BrowserModule,
@@ -61,13 +54,6 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-<<<<<<< HEAD
-
-  ],  
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
-  // providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
-  bootstrap: [AppComponent]
-=======
     RouterModule.forRoot([
       { path: '', component: HomepageComponent },
       { path: 'login', component: LoginComponent },
@@ -84,6 +70,5 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
   ],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }, CookieService],
   bootstrap: [FrameworkComponent]
->>>>>>> 82441842bdfda97feed27a74b508258a21333e65
 })
 export class AppModule { }
