@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const user = mongoose.model('user');
 
+
 const UserLogin = function (req, res) {
     console.log(req.body, 'req.body')
     user.find(req.body).exec((err, userData) => {
@@ -25,6 +26,16 @@ const UserRegister = function (req, res) {
 };
 
 const GetUsers = function (req, res) {
+   if(req.body){
+    user.find(req.body).exec(function (err, userdata) {
+        if(err){
+            res.status(404).json(err);
+            return;
+        }
+        res.status(200).json(userdata)
+    })
+   }
+   else{
     user.find().exec(function (err, userdata) {
         if(err){
             res.status(404).json(err);
@@ -32,10 +43,29 @@ const GetUsers = function (req, res) {
         }
         res.status(200).json(userdata)
     })
+
+   }
+    
 };
+
+
+
+// get doctors data
+// const doctordisplay = function (req, res) {
+//     doctor.find().exec(function (err, data) {
+//         if(err){
+//             res.status(404).json(err);
+//             return;
+//         }
+//         res.status(200).json(data)
+//     })
+// };
+
+
 
 module.exports = {
     UserLogin,
     UserRegister,
-    GetUsers
+    GetUsers,
+    
 }
