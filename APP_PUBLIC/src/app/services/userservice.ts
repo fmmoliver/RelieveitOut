@@ -27,6 +27,11 @@ export class UserService {
     private handleError(error: any) {
         console.log(error, 'error')
     }
+    getuserDetails() {
+        let req = {}
+        return this.http.post(this.APIURL + '/users',req)
+           
+    }
 
     getUsers(newUser: User): Promise<void | User> {
         return this.http.post(this.APIURL + '/users', newUser)

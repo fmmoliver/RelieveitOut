@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA , NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { APP_BASE_HREF } from '@angular/common';
@@ -18,6 +18,11 @@ import { AppointmentsComponent } from './appointments/appointments.component';
 import { CrisislineComponent } from './crisisline/crisisline.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { SignupComponent } from './signup/signup.component';
+import { ProfessionaldashboardComponent } from './professionaldashboard/professionaldashboard.component';
+import { ClientdashboardComponent } from './clientdashboard/clientdashboard.component';
+import { MainmenuComponent } from './mainmenu/mainmenu.component';
+import { FooterComponent } from './footer/footer.component'
+import { AppRoutingModule } from './app-routing.module';
 import { AdminsignupComponent } from './adminsignup/adminsignup.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
@@ -28,13 +33,17 @@ import { GenericListFilterModule } from 'generic-list-filter'
 @NgModule({
   declarations: [
     AppComponent,
+    MainmenuComponent,
     FrameworkComponent,
-    LoginComponent,
+    LoginComponent,HomepageComponent,
     OurteamComponent,
     AppointmentsComponent,
     CrisislineComponent,
     AboutusComponent,
     SignupComponent,
+    ProfessionaldashboardComponent,
+    ClientdashboardComponent,
+    FooterComponent,
     AdminsignupComponent,
     AdminloginComponent,
     AdmindashboardComponent,
@@ -42,7 +51,7 @@ import { GenericListFilterModule } from 'generic-list-filter'
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
+    HttpClientModule,AppRoutingModule,
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
@@ -61,7 +70,8 @@ import { GenericListFilterModule } from 'generic-list-filter'
       {path: 'create-appointment', component:CreateAppointmentComponent}
     ])
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/' }, CookieService],
+  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  providers: [CookieService],
   bootstrap: [FrameworkComponent]
 })
 export class AppModule { }
