@@ -1,4 +1,4 @@
-import { CUSTOM_ELEMENTS_SCHEMA , NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
 import { APP_BASE_HREF } from '@angular/common';
@@ -35,7 +35,8 @@ import { GenericListFilterModule } from 'generic-list-filter'
     AppComponent,
     MainmenuComponent,
     FrameworkComponent,
-    LoginComponent,HomepageComponent,
+    LoginComponent, 
+    HomepageComponent,
     OurteamComponent,
     AppointmentsComponent,
     CrisislineComponent,
@@ -51,7 +52,7 @@ import { GenericListFilterModule } from 'generic-list-filter'
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,AppRoutingModule,
+    HttpClientModule, AppRoutingModule,
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
@@ -67,10 +68,12 @@ import { GenericListFilterModule } from 'generic-list-filter'
       { path: 'adminlogin', component: AdminloginComponent },
       { path: 'adminsignup', component: AdminsignupComponent },
       { path: 'admindashboard', component: AdmindashboardComponent },
-      {path: 'create-appointment', component:CreateAppointmentComponent}
+      { path: 'create-appointment', component: CreateAppointmentComponent },
+      { path: 'clientdashboard', component: ClientdashboardComponent },
+      { path: 'professionaldashboard', component: ProfessionaldashboardComponent },
     ])
   ],
-  schemas:[CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [CookieService],
   bootstrap: [FrameworkComponent]
 })

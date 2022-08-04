@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("userDeatils",JSON.stringify(response))
           localStorage.setItem("isloggedIn",JSON.stringify(true))
           localStorage.setItem("isClient",JSON.stringify(true))
-          this.router.navigateByUrl('/appointments');
+          this.router.navigateByUrl('/clientdashboard');
 
         } else {
           this.toastr.error('Invalid Login Credentials !!!!', 'Login Failed');
@@ -61,8 +61,6 @@ export class LoginComponent implements OnInit {
           localStorage.setItem("isloggedIn",JSON.stringify(true))
           localStorage.setItem("isClient",JSON.stringify(false))
           this.router.navigateByUrl('/professionaldashboard');
-
-          // this.router.navigateByUrl('/ourteam');
         } else {
           this.toastr.error('Invalid Login Credentials !!!!', 'Login Failed');
         }
