@@ -12383,3 +12383,17 @@ background-color: #fc8370;
 .form-row{
   padding-bottom: 10px;
 }
+
+
+/* filter */
+.app-btn {
+  height: 32px;
+  width: 110px;
+  background: #fc8370; 
+  border: none;
+  color: #fff;
+  outline: none;
+  cursor: pointer;
+  border-radius: 2px;
+}
+

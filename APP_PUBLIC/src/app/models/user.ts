@@ -4,11 +4,14 @@ export class User {
     _id?: string;
     username?: string;
     password?: string;
+    image?:string;
     email?: string;
     role?: string;
-    typeOfService?: string;
+    speciality?: string;
     city?: string;
     Price?: string;
+    rating?:string;
+    session_duration?:string;
 }
 
 

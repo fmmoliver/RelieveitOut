@@ -8,23 +8,53 @@
         <p>Jungian</p>
         <p>Hypnotherapist</p>
         <p>Cognitive Behavioural</p>
-        <p>Trauma Focused</p>     
-      </div>
+        <p>Trauma Focused</p> 
+        
+        
+      
+       
+        <!-- <div class = "container">
+          <ul>
+            <li *ngFor = "let checkbox of checkboxcity">
+              <input type = "{{checkbox.type}}" value={{checkbox.city}} (change)="onchange($event)">{{checkbox.city}}
+            </li>
+          </ul>
+        </div>   
+       -->
+
+      <!-- <div class = "container">
+        <ul>
+          <li *ngFor = "let checkbox of checkboxservice">
+            <input type = "{{checkbox.type}}" value={{checkbox.typeOfService}} (change)="onchange($event)">{{checkbox.typeOfService}}
+          </li>
+        </ul>
+      </div>-->   
+    </div> 
+
       <div class="col col-lg-1 "></div>
-         
+      
       <div class="col col-lg-9" style="position: relative;">
-        <button class="filter" >Filter the options   <img src="assets/icons/sliders.svg" alt="..." /></button>
-        <div class="list"> 
+        <!-- <button class="filter" >Filter  <img src="assets/icons/sliders.svg" alt="..." /></button> -->
+        
+        <div class = "filter"> 
+          <app-filter 
+      [list]="filterList" 
+      (onFilterChange)="filterChange($event)" >
+   </app-filter>
+        </div>
+        <br><br><br><br>
+        <div class="list">
+          
           <div class="item col-lg-12"  *ngFor="let professional of professionals;">
             <div class="photo"> 
-                <div class="photoCircle"><img src="assets/images/photo2.png" alt="..."/></div>
+                <div class="photoCircle"><img src="{{professional.image}}" alt="..."/></div>
             </div>
             <div class="rate"> 
-              <p>Rate      <img src="assets/icons/star.svg" alt="..." />      4.9</p> 
+              <p><img src="assets/icons/star.svg" alt="..." />{{professional.rating}}</p> 
             </div>
             <div class="name">   
               <p><strong>{{professional.username}}</strong></p>
-              <h6>{{professional.typeOfService}}</h6> 
+              <h6>{{professional.speciality}}</h6> 
             </div>
             <div class="appBtn"> <a routerLink= "{{'/create-appointment'}}">Make an appointment</a></div>
            </div>
@@ -82,5 +112,8 @@
       </div>
       </div>
     </div>
-  </div>
+
+  
+   </div>
+ 
 </section>
