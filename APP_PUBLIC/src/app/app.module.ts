@@ -25,8 +25,9 @@ import { FooterComponent } from './footer/footer.component'
 import { AppRoutingModule } from './app-routing.module';
 import { AdminsignupComponent } from './adminsignup/adminsignup.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
-import { AdmindashboardComponent } from './admindashboard/admindashboard.component'
-import { CreateAppointmentComponent } from './create-appointment/create-appointment.component'
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
+import { GenericListFilterModule } from 'generic-list-filter'
 
 
 @NgModule({
@@ -54,6 +55,7 @@ import { CreateAppointmentComponent } from './create-appointment/create-appointm
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
+    GenericListFilterModule,
     RouterModule.forRoot([
       { path: '', component: HomepageComponent },
       { path: 'login', component: LoginComponent },

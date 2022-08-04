@@ -22,7 +22,6 @@ a, a:hover{
 
 .filter{
   background: #FC8370;
-  color: white;
   padding: 10px 35px;
   font-size: 16px;
   font-weight: 600;
@@ -34,6 +33,7 @@ a, a:hover{
   margin: 2em 1em;
   position: absolute;
   right: 0;
+  font-weight: bold;
 }
 
 .filter img{
