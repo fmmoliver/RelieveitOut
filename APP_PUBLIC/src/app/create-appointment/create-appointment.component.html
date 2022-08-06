@@ -1,76 +1,61 @@
 <section>
-            <br><br><br><br>
-    <div class="appointment-form1">
-        <div class="row">
-        <div class="col-6 "> <img class="d-block w-100" src="assets/images/img1.jpg" alt="seven slide" width="50px" style="border-radius: 10%"></div>
-                <div class="col-4" style="margin-top: 5%;"><p>Dr John Doe </p>
-                <br>
-                <p>Type of service</p>
-                <br>
-                <p>Price</p></div>
+    <div class="top-spacing">
+        <div class="container">
+            <div class="row">
+                <div class="col col-lg-2 sidebar">
+                    <h4><strong>Book Appointment</strong></h4>
+                </div>
+            </div>
+            <div class="row text-center justify-content-between my-2 mb-2">
+                <div class="col-md-4">
+                    <div class="btn-group">
+                        <div class="btn btn-primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate"
+                            (viewDateChange)="closeOpenMonthViewDay()">
+                            Previous
+                        </div>
+                        <div class="btn btn-outline-secondary" mwlCalendarToday [(viewDate)]="viewDate">
+                            Today
+                        </div>
+                        <div class="btn btn-primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate"
+                            (viewDateChange)="closeOpenMonthViewDay()">
+                            Next
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="btn-group">
+                        <div class="btn btn-primary" (click)="setView(CalendarView.Month)"
+                            [class.active]="view === CalendarView.Month">
+                            Month
+                        </div>
+                        <div class="btn btn-primary" (click)="setView(CalendarView.Week)"
+                            [class.active]="view === CalendarView.Week">
+                            Week
+                        </div>
+                        <div class="btn btn-primary" (click)="setView(CalendarView.Day)"
+                            [class.active]="view === CalendarView.Day">
+                            Day
+                        </div>
+                    </div>
+            </div>
+            <div class="row content">
+                <div [ngSwitch]="view">
+                    <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events"
+                        [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+                        (eventClicked)="handleEvent('Clicked', $event.event)"
+                        (eventTimesChanged)="eventTimesChanged($event)">
+                    </mwl-calendar-month-view>
+                    <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="events"
+                        [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
+                        (eventTimesChanged)="eventTimesChanged($event)">
+                    </mwl-calendar-week-view>
+                    <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="events"
+                        [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)"
+                        (eventTimesChanged)="eventTimesChanged($event)">
+                    </mwl-calendar-day-view>
+                </div>
+            </div>
         </div>
     </div>
-    <form class="appointment-form">        
-        <div class="form-row">
-            <div class=" col-sm-4">
-            <label for="DoctorName">Doctor's Name</label>
-            <input type="text" class="form-control" id="doctorName" placeholder="Doctor's Name">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class=" col-sm-6">
-            <label for="DoctorName">Type Of Service</label>
-            <input type="text" class="form-control" id="typeOfService" placeholder="Type of Service">
-            </div>
-            <div class=" col-sm-6">
-            <label for="appointmentdate">Date - Time</label>
-            <input type="datetime-local" class="form-control" id="appointmentdate" placeholder=""  min="" max="2022-10-30T16:30">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class=" col-sm-6">
-            <label for="DoctorName">Client's Name</label>
-            <input type="text" class="form-control" id="clientName" placeholder="Client's Name">
-            </div>
-        </div>
-
-        <div class="form-row" style="grid-template-columns:1fr 1fr">
-            <div class=" col-sm">
-            <label for="DoctorName">Client's Contact Number</label>
-            <input type="text" class="form-control" id="clientNumber" placeholder="Client's contact number">
-            </div>
-            <div class=" col-sm">
-            <label for="DoctorName">Client's email</label>
-            <input type="text" class="form-control" id="clientemail" placeholder="Client's email ID">
-            </div>
-        </div>
-        <div class="form-row" style="grid-template-columns: 1fr 1fr 1fr">
-            <div class=" col-sm">
-            <label for="street">Address : Street</label>
-            <input type="text" class="form-control" id="street" placeholder="Street">
-        </div>
-            <div class=" col-sm">
-            <label for="city">City</label>
-            <input type="text" class="form-control" id="city" placeholder="city">
-        </div>
-            <div class=" col-sm">
-            <label for="province">Province</label>
-            <input type="text" class="form-control" id="province" placeholder="Province">
-            </div>
-        </div>
-        <div class="form-row">
-            <div class=" col-sm">
-            <label for="reason">Brief Description of reason for visit</label>
-            <textarea id="descpription" class="form-control" name="reason" rows="4" cols="50"></textarea>
-        </div>
-        </div>
-        
-        <div class="form-row" >
-            <div class="col-sm-5" style="margin-right: 10px"></div>
-            <div class="col-sm-6">
-            <button type="submit" class="register">Sign in</button>
-        </div>        
-        </div>            
-</form>
-     
- </section>
+    </div>
+</section>

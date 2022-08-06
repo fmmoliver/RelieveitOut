@@ -18,6 +18,8 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "angular-calendar": "^0.29.0",
+    "date-fns": "^2.29.1",
     "generic-list-filter": "^0.1.6",
     "ngx-cookie-service": "^14.0.1",
     "ngx-toastr": "^14.3.0",

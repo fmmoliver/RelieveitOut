@@ -1,12 +1,13 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http'
-import { APP_BASE_HREF } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 
 import { AppComponent } from './app.component';
@@ -35,7 +36,7 @@ import { GenericListFilterModule } from 'generic-list-filter'
     AppComponent,
     MainmenuComponent,
     FrameworkComponent,
-    LoginComponent, 
+    LoginComponent,
     HomepageComponent,
     OurteamComponent,
     AppointmentsComponent,
@@ -68,10 +69,14 @@ import { GenericListFilterModule } from 'generic-list-filter'
       { path: 'adminlogin', component: AdminloginComponent },
       { path: 'adminsignup', component: AdminsignupComponent },
       { path: 'admindashboard', component: AdmindashboardComponent },
-      { path: 'create-appointment', component: CreateAppointmentComponent },
+      { path: 'create-appointment/:professionalId', component: CreateAppointmentComponent },
       { path: 'clientdashboard', component: ClientdashboardComponent },
       { path: 'professionaldashboard', component: ProfessionaldashboardComponent },
-    ])
+    ]),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    })
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [CookieService],
