@@ -35,10 +35,10 @@
 }
 
 .name p {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: bold;
   line-height: 25px;
-  width: 100px;
+  width: 120px;
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
