@@ -5,8 +5,9 @@ const appointSchema = new mongoose.Schema({
     clientName: {type: String, required: true},
     speciality: {type: String, required: true},
     dateTime: {type: Date, required: true},
-    city:  {type: String, required: true},
-    Price: {type: String, required: true}
+    city:  {type: String, required: false},
+    Price: {type: String, required: false},
+    status: {type: String, required: true}
     });
     
 

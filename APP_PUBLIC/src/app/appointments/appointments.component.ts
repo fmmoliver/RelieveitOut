@@ -9,8 +9,14 @@ import { ToastrService } from 'ngx-toastr';
   templateUrl: './appointments.component.html',
   styleUrls: ['./appointments.component.css']
 })
-export class AppointmentComponent implements OnInit {
 
+export class AppointmentsComponent implements OnInit {
+
+  appointments: Appointment[]
+
+  public appointmentClient: Appointment = {
+    clientName: 'Luke Skywalker'
+  }
   constructor(private AppointmentService: AppointmentService, private router: Router, private toastr: ToastrService){
 
   }
@@ -20,19 +26,20 @@ export class AppointmentComponent implements OnInit {
   //if the role is Client I have to search by clientName
 
   ngOnInit(): void {
+    this.fetchAppointments(this.appointmentClient);
+  }
+
+  public fetchAppointments (newAppointment: Appointment): void{
+
+    this.AppointmentService
+      .getAppointments(newAppointment)
+      .then((response) => {
+        this.appointments = response as Appointment[];
+      });
 
   }
 
-  /*
-    public fetchAppointments (newAppointment: Appointment): void{
-      this.AppointmentService.getAppointments(newAppointment).then((response) => {
-        if(response) {
-
-        }
-      });
-    }
-*/
   public buttonMessage() {
-    this.toastr.info('Implementent in next version!');
+    this.toastr.info('Will be implement in next version!');
   }
 }
