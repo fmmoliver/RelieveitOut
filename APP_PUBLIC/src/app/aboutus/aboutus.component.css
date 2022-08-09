@@ -1,12 +1,20 @@
+.row {
+  max-height: 500px;
+}
+
 .about-heading {
     margin: 0.5em 0.5em 1.5em;
+}
+
+.about-heading strong{
+  color:#FC8370;
 }
 
 .abouttext {
     background: #fc8370ba;
     border-radius: 16px;
     font-family: 'Montserrat','Roboto Slab';
-    margin: 0.5em 0.5em 1.5em 1em;
+    margin: 0.5em 0.5em 1em 1em;
 }
 
 .aboutfisrtpart{
@@ -30,4 +38,9 @@
 .aboutdate{
     padding: 0em 3em 2em 0em;
     text-align: right;
+}
+
+.aboutdate{
+  padding: 0em 3em 2em 0em;
+  text-align: right;
 }

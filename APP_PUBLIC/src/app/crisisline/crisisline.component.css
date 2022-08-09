@@ -1,137 +1,65 @@
-.team{
-    margin-top: 40px;
+.crisis{
+  margin-top: 60px;
+  font-family: 'Montserrat','Roboto Slab';
 }
 
-h4{
-    margin-bottom: 25px;
+.crisis h4{
+  font-size: 1.35em;
+  margin-top: 1em;
+  margin-bottom: 25px;
 }
 
-.team h4,.team p{
-    font-size: 32px;
+.sidebar {
+  width: 11em;
 }
 
 .list{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 50px;
-    grid-row-gap: 100px;
-    margin-top: 120px;
-}
-
-.filter{
-    background: #FB7647;
-    color: white;
-    padding: 10px 35px;
-    font-size: 14px;
-    font-weight: 700;
-    font-family: 'Inter';
-    border-radius: 50px;
-    line-height: 22px;
-    border: none;
-    letter-spacing: -0.02em;
-    /* float: right; */
-    margin: 15px 10px;
-    position: absolute;
-    right: 0;
-}
-
-.filter img{
-    margin-left: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 50px;
+  grid-row-gap: 50px;
+  margin-top: 2em;
+  margin-left: 4em;
 }
 
 .item{
-    background-color: #CDDECD;
-    border-radius: 20px;
-    max-width: 480px;
-    max-height: 280px;
-    box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 20px 30px;
-    grid-column-gap: 20px;
-    grid-row-gap: 120px;
-}
-
-.appBtn{
-    width: 195px;
-    height: 80px;
-    font-family: 'Inter';
-    /* font-style: normal; */
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 22px;
-    text-align: center;
-    /* letter-spacing: -0.02em; */
-    /* font-feature-settings: 'calt' off; */
-    color: #FFFFFF;
-    background: #FB7647;
-    /* flex: none; */
-    /* order: 0; */
-    /* flex-grow: 0; */
-    border-radius: 24px;
-    padding: 18px 24px;
+  background-color: #CDDECD;
+  border-radius: 16px;
+  width: 350px;
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 20px 30px;
+  grid-column-gap: 20px;
+  grid-row-gap: 120px;
 }
 
 .name p {
-    font-family: 'Inter';
-    font-weight: 700;
-    font-size: 32px;
-    line-height: 39px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 25px;
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
 }
 
+/*
 .name :nth-child(2){
-    font-size: 24px;
-    line-height: 29px;
-}
+  font-size: 20px;
+  line-height: 20px;
+}*/
 
-.rate{
-    position: relative;
-}
-
-.list p{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-}
-
-.rate p{
-    
-    position: absolute;
-    right: 0;
-}
-
-.rate img{
-    margin: 7px;
-    padding-bottom: 5px;
-}
-
-
-.photoCircle{
-    width: 140px;
-    height: 140px;
-    background-color: #FB7647;
-    border-radius: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: -55px;
-    left: -55px;
-}
-.photo {
-    position: relative;
-}
-.photoShape{
-    background-color: #FB7647;
-    width: 70px;
-    height: 70px;
-    position: absolute;
-    z-index: -1;
-    top: -55px;
-    left: -55px;
-
+.appBtn{
+  width: 150px;
+  height: 80px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+  background:  #FC8370;
+  border-radius: 16px;
+  padding: 13px 13px;
 }
 
 a, a:hover{
@@ -145,13 +73,13 @@ a, a:hover{
         flex-direction: column;
         align-items: center;
     }
-    .team h4,.team p{ 
+    .team h4,.team p{
         font-size: 26px;
         line-height: 26px;
      }
-    
+
 }
-  
+
 
 @media only screen and (max-width: 990px) {
    .team .row {
@@ -159,12 +87,6 @@ a, a:hover{
         align-items: center;
         margin: 20px;
     }
-    /* .sidebar{
-       width: 24%; 
-    }
-    .empty{
-        width: 0;
-    } */
 
     .sidebar{
         margin-top: 60px;
@@ -173,7 +95,7 @@ a, a:hover{
 }
 
 @media only screen and (max-width: 475px) {
-    .item p, .name :nth-child(2), .appBtn, .team h4,.team p{ 
+    .item p, .name :nth-child(2), .appBtn, .team h4,.team p{
         font-size: 20px;
         line-height: 18px;
      }
@@ -182,29 +104,18 @@ a, a:hover{
         grid-template-columns: 1fr;
         grid-row-gap: 0px;
      }
-    
-     .rate, .name{
+
+     .name{
         margin-left: 60px;
      }
 
-     .rate p {
-        position: unset;
-     }
      .appBtn{
         width: max-content;
         height: initial;
      }
-     .photoShape{
-        width: 50px;
-        height: 50px;
-     }
-     .photoCircle{
-        width: 100px;
-        height: 100px;
-     }
-   
+
  }
- 
+
 .crisis{
     display: grid;
     grid-template-columns: 1fr 3fr;
