@@ -1,52 +1,51 @@
- <section>
-    <div class="top-spacing">
-            <div class="container">
-                <div class="row">
-                    <div class="col col-lg-2 sidebar">
-                      <h4><strong>My Appointments</strong></h4>
-                     
-                    </div>
-                  </div>
-                  <div class="row content">
-                    <div class="info">
-                        <div class="ad bullet"></div>
-                        <div class="ad"><p>dr. Jim Doe</p></div>
-                        <div class="ad"><p>-</p></div>
-                        <div class="ad"><p>01/07/2022</p></div>
-                        <div class="ad"><p>-</p></div>
-                        <div class="ad"><p>11:00am</p></div>
-                    </div>
-                    <div class="btns">
-                        <button class="orange">Done <img src="assets/icons/check.svg" alt="..." /></button>
-            
-                    </div>
-                    <div class="info">
-                        <div class="bullet"></div>
-                        <div class="ad"><p>dr. Jim Doe</p></div>
-                        <div class="ad"><p>-</p></div>
-                        <div class="ad"><p>01/07/2022</p></div>
-                        <div class="ad"><p>-</p></div>
-                        <div class="ad"><p>11:00am</p></div>
-                    </div>
-                    <div class="btns">
-                        <button class="green">Confirmed <img src="assets/icons/thumbs-up.svg" alt="..." /></button>
-                        <button  class="green">Get online <img src="assets/icons/phone-call.svg" alt="..." /></button>
-                        <button  class="green">Reschedule <img src="assets/icons/refresh-ccw.svg" alt="..." /></button>
-                    </div>
-                    <div class="info">
-                        <div class="bullet"></div>
-                        <div class="ad"><p>dr. Jim Doe</p></div>
-                        <div class="ad"><p>-</p></div>
-                        <div class="ad"><p>01/07/2022</p></div>
-                        <div class="ad"><p>-</p></div>
-                        <div class="ad"><p>11:00am</p></div>
-                    </div>
-                    <div class="btns">
-                        <button class="orange">Cancelled <img src="assets/icons/x-square.svg" alt="..." /></button>
-                        
-                    </div>
-                    
-                  </div>
-            </div>
-           </div>
-         </section>
+<section>
+  <div class="container appointment">
+    <div class="row">
+      <div class="col col-lg-2 sidebar">
+        <h4>My Appointments</h4>
+      </div>
+    </div>
+
+    <div class="row content" *ngFor="let appointment of appointments;">
+      <div class="info">
+        <div class="bullet"></div>
+        <div class="ad"><p>{{appointment.doctorName}}</p></div>
+        <div class="adspace"><p>-</p></div>
+        <div class="ad"><p>{{appointment.speciality}}</p></div>
+        <div class="adspace"><p>-</p></div>
+        <div class="ad"><p>test</p></div>
+      </div>
+      <div class="btns">
+        <button class="orange" (click)="buttonMessage()">Done <img src="assets/icons/check.svg" alt="..." /></button>
+      </div>
+
+      <!--
+      <div class="info">
+        <div class="bullet"></div>
+        <div class="ad"><p>dr. Jim Doe</p></div>
+        <div class="ad"><p>-</p></div>
+        <div class="ad"><p>01/07/2022</p></div>
+        <div class="ad"><p>-</p></div>
+        <div class="ad"><p>11:00am</p></div>
+      </div>
+      <div class="btns">
+        <button class="green">Confirmed <img src="assets/icons/thumbs-up.svg" alt="..." /></button>
+        <button  class="green">Get online <img src="assets/icons/phone-call.svg" alt="..." /></button>
+        <button  class="green">Reschedule <img src="assets/icons/refresh-ccw.svg" alt="..." /></button>
+      </div>
+
+      <div class="info">
+        <div class="bullet"></div>
+        <div class="ad"><p>dr. Jim Doe</p></div>
+        <div class="ad"><p>-</p></div>
+        <div class="ad"><p>01/07/2022</p></div>
+        <div class="ad"><p>-</p></div>
+        <div class="ad"><p>11:00am</p></div>
+      </div>
+      <div class="btns">
+        <button class="orange">Cancelled <img src="assets/icons/x-square.svg" alt="..." /></button>
+      </div>
+      -->
+    </div>
+  </div>
+</section>

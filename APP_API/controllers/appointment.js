@@ -12,6 +12,30 @@ const createappointmnent = function (req, res) {
     })
 };
 
+//get Appointment
+const getAppointments = function (req, res) {
+    if(req.body){
+        appointment.find(req.body).exec(function (err, data) {
+            if(err){
+                res.status(404).json(err);
+                return;
+            }
+            res.status(200).json(data)
+        })
+       }
+       else{
+        appointment.find().exec(function (err, data) {
+            if(err){
+                res.status(404).json(err);
+                return;
+            }
+            res.status(200).json(data)
+        })
+    
+       }
+};
+
 module.exports = {
-    createappointmnent
+    createappointmnent,
+    getAppointments
 }

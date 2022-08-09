@@ -1,37 +1,62 @@
-
-.content, .info, .btns{
-    display: grid;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 29px;
-    grid-row-gap: 10px;
-    font-family: 'Inter';
+.appointment{
+    margin-top: 60px;
+    font-family: 'Montserrat','Roboto Slab';
 }
 
-.content{
-    margin: 3rem;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 30px;
-}
-.info{
-    grid-template-columns: 1fr 9fr 1fr 4fr 1fr 4fr;
-    grid-column-gap: 20px;
-}
-
-.btns{
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 30px;
+.appointment h4{
+    font-size: 1.35em;
+    margin-top: 1em;
 }
 
 .bullet{
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     background-color: #FC8370;
-    margin-top: 12px;
     border-radius: 50px;
+    margin-left: 2em;
+    justify-content: center;
+    margin-top: 0.4em;
 }
 
-button {    display: flex;
+.info{
+    grid-template-columns: 1fr 9fr 1fr 4fr 1fr 4fr;
+    grid-column-gap: 1em;
+}
+
+.ad {
+    font-family: 'Montserrat','Roboto Slab';
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.adspace {
+    text-align: center;
+    
+}
+
+/*Olds*/
+
+.btns{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+}
+
+.content{
+    margin-top: 2em;
+    margin-left: 2em;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 20px;
+}
+
+.content, .info, .btns{
+    display: grid;
+    font-size: 24px;
+    line-height: 24px;
+    grid-row-gap: 10px;
+}
+
+button {    
+    display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -43,9 +68,10 @@ button {    display: flex;
     border: none;
     border-radius: 24px;
     color: white;
-    font-size: 14px;
-    font-family: 'Inter';
+    font-size: 16px;
+    font-family: 'Montserrat','Roboto Slab';
 }
+
 .orange {
     background: #FB7647;
 }
