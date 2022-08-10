@@ -39,6 +39,12 @@ export class UserService {
             .then(response => response as User)
             .catch(this.handleError)
     }
+    updateProfile(req){
+        return this.http.post(this.APIURL + '/update',req)
 
-    
+    }
+    deleteprofile(req){
+        return this.http.post(this.APIURL + '/delete',req)
+
+    }
 }

@@ -25,6 +25,48 @@ const UserRegister = function (req, res) {
     })
 };
 
+//user Update
+ const  UserUpdate = function (req,res) {       
+        const result = user.findByIdAndUpdate(req.body._id, req.body).setOptions({ overwrite: true, new: true })
+        .exec(function (err, userdata){
+        if(err){
+            res.status(404).json(err);
+            return;
+        }
+        
+        console.log(result);
+        res.status(200).json(userdata)
+        })
+        return result
+
+};
+//user Update activefalse
+//user delete
+const UserDelete =async function(req,res){
+    console.log(req.body);
+    if(req.body.role=="PROFESSIONAL"){
+        req.body.activeuser = false;
+        const result = user.findByIdAndUpdate(req.body._id, req.body).setOptions({ overwrite: true, new: true })
+        .exec(function (err, userdata){
+        if(err){
+            res.status(404).json(err);
+            return;
+        }
+        
+        console.log(result);
+        res.status(200).json(userdata)
+        })
+        return result
+    }else{
+    const User = await user.findByIdAndDelete(req.body._id);
+    if (!User) {
+        return res.status(400).json("User not found");
+    }
+        res.status(200).json("User deleted successfully");
+       }
+};
+
+
 const GetUsers = function (req, res) {
    if(req.body){
     user.find(req.body).exec(function (err, userdata) {
@@ -66,6 +108,6 @@ const GetUsers = function (req, res) {
 module.exports = {
     UserLogin,
     UserRegister,
-    GetUsers,
+    GetUsers,UserUpdate,UserDelete
     
 }

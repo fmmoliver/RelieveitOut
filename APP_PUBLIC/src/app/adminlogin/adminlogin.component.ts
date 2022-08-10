@@ -15,7 +15,8 @@ export class AdminloginComponent implements OnInit {
   public AdminUser: User = {
     password: '',
     email: '',
-    role: 'ADMIN'
+    role: 'ADMIN',
+    speciality:''
   }
 
 

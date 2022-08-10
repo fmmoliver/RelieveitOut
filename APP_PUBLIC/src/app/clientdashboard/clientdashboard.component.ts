@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { User } from '../models/user';
 import { UserService } from '../services/userservice';
 
 @Component({
@@ -9,8 +12,20 @@ import { UserService } from '../services/userservice';
 export class ClientdashboardComponent implements OnInit {
   usersList: any = [];
   loggeInUserDetails: any = [];
-  filteredUser :any = []
-  constructor(private apiservice: UserService) { }
+  filteredUser :any = [];
+  isedit = false;
+  public newClientUser: User = {
+    username: '',
+    _id: '',
+    password: '',
+    email: '',
+    city:'',
+    Price:'',
+    speciality:'',
+    role: 'CLIENT'
+  }
+  constructor(private apiservice: UserService,private router:Router,
+    private toaster:ToastrService) { }
 
   ngOnInit(): void {
     this.loggeInUserDetails = JSON.parse(localStorage.getItem("userDeatils"))
@@ -20,7 +35,7 @@ export class ClientdashboardComponent implements OnInit {
         this.filteredUser = this.usersList.filter(e => this.loggeInUserDetails._id === e._id)
         
         console.log(this.filteredUser);
-        
+        this.newClientUser = this.filteredUser[0]
 
       },
       error => {
@@ -29,5 +44,38 @@ export class ClientdashboardComponent implements OnInit {
     )
   }
 
-
+  update(){
+    this.isedit = true;
+  }
+  delete(){
+    let req = {
+      activeuser : "false",
+      _id:this.filteredUser[0]._id
+    }
+    this.apiservice.deleteprofile(req).subscribe(
+      data =>{
+        this.toaster.success("deactivated")
+        
+        this.router.navigate(['/login'])
+      },
+      error =>{
+        this.toaster.success("cant update")
+  
+      }
+    )
+  }
+  updateProfile(data)
+  {
+    this.apiservice.updateProfile(data).subscribe(
+      data =>{
+        this.toaster.success("updated")
+        this.isedit = false;
+        this.ngOnInit()
+      },
+      error =>{
+        this.toaster.success("cant update")
+  
+      }
+    )
+  }
 }

@@ -1,4 +1,4 @@
-<section>
+<section *ngIf="!isedit">
     <div class="container login-container">
         <div class="row">
             <!-- <div class="col-md-6 login-form-1">
@@ -14,12 +14,51 @@
                 <p *ngIf="users?.password">Password : {{users?.password}}</p>
                 <p *ngIf="users?.email">Email : {{users?.email}}</p>
                 <p *ngIf="users?.city">City : {{users?.city}}</p>
-                <p *ngIf="users?.price">Price : {{users?.price}}</p>
-                <p *ngIf="users?.typeOfService">Type of service : {{users?.typeOfService}}</p>
-                <button class="btn btn-dark">Remove Account</button> &nbsp;
-                <button class="btn btn-success"> Update Account</button>
+                <p *ngIf="users?.Price">Price : {{users?.Price}}</p>
+                <p *ngIf="users?.speciality">speciality : {{users?.speciality}}</p>
+                <button class="btn btn-dark" (click)="delete()">Remove Account</button> &nbsp;
+                <button class="btn btn-success" (click)="update()"> Update Account</button>
 
             </div>
         </div>
     </div>
+</section>
+<section *ngIf="isedit">
+    <div class="container login-container">
+        <div class="row">
+            <div class="col-md-6 offset-6 login-form-2" *ngFor="let users of filteredUser">
+                <h3>User Details</h3>
+                <form (ngSubmit)="updateProfile(newProfessionalUser)">
+                    <div class="form-group">
+                        <input [(ngModel)]="newProfessionalUser.email" name="email" type="text" class="form-control" placeholder="Your Email *" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="newProfessionalUser.username" name="username" type="text" class="form-control" placeholder="Your Username *" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="newProfessionalUser.password" name="password" type="password" class="form-control" placeholder="Your Password *" value="" required />
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="newProfessionalUser.city" name="city" type="text" class="form-control" placeholder="Your city *" required />
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="newProfessionalUser.Price" name="price" type="text" class="form-control" placeholder="Price *" required />
+                    </div>
+                    <div class="form-group">
+                        <input [(ngModel)]="newProfessionalUser.speciality" name="speciality" type="text" class="form-control" placeholder="speciality *" required />
+                    </div>
+                    <div class="form-group">
+                        <input name="confirmpassword" type="file" class="form-control" value="" />
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" class="btnSubmit" value="Update" />
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
 </section>
