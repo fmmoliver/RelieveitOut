@@ -123,6 +123,12 @@ a, a:hover{
   font-style: italic;
   font-size: 16px;
 }
+
+.filter {
+  background: white;
+  border-width: 5em;
+  border-color: #FC8370;
+}
 /*
 .name :nth-child(2){
   font-size: 24px;
@@ -156,13 +162,13 @@ a, a:hover{
     flex-direction: column;
     align-items: center;
   }
-  .team h4,.team p{ 
+  .team h4,.team p{
     font-size: 26px;
     line-height: 26px;
   }
-    
+
 }
-  
+
 
 @media only screen and (max-width: 990px) {
   .team .row {
@@ -171,7 +177,7 @@ a, a:hover{
     margin: 20px;
   }
   /* .sidebar{
-      width: 24%; 
+      width: 24%;
   }
   .empty{
       width: 0;
@@ -184,7 +190,7 @@ a, a:hover{
 }
 
 @media only screen and (max-width: 475px) {
-  .item p, .name :nth-child(2), .appBtn, .team h4,.team p{ 
+  .item p, .name :nth-child(2), .appBtn, .team h4,.team p{
       font-size: 20px;
       line-height: 18px;
     }

@@ -1,51 +1,40 @@
 <section>
   <div class="container appointment">
+
+
     <div class="row">
       <div class="col col-lg-2 sidebar">
         <h4>My Appointments</h4>
       </div>
+      <div class="col col-lg-10 loggedUserInfo"> Client: Luke Skywalker</div>
     </div>
 
-    <div class="row content" *ngFor="let appointment of appointments;">
-      <div class="info">
-        <div class="bullet"></div>
-        <div class="ad"><p>{{appointment.doctorName}}</p></div>
-        <div class="adspace"><p>-</p></div>
-        <div class="ad"><p>{{appointment.speciality}}</p></div>
-        <div class="adspace"><p>-</p></div>
-        <div class="ad"><p>test</p></div>
+    <div *ngIf="appointments.length > 0; else noInformation">
+      <div class="row content" *ngFor="let appointment of appointments">
+        <div class="info">
+          <div class="bullet"></div>
+          <div class="ad">{{appointment.doctorName}} - {{appointment.speciality}}</div>
+          <div></div>
+          <div class="time"><p ng-non-bindable>{{appointment.dateTime | date:"yyyy-MM-dd ' at ' h:mm a"}}</p></div>
+        </div>
+        <div [ngSwitch]="appointment.status">
+          <div class="btns done" *ngSwitchCase="'done'" style="display: grid;">
+            <button class="orange" (click)="buttonMessage('done')">Done <img src="assets/icons/check.svg" alt="..." /></button>
+            <button class="orange" (click)="buttonMessage('rate')">Rate the session <img src="assets/icons/starWhite.svg" alt="..." /></button>
+          </div>
+          <div class="btns confirmed" *ngSwitchCase="'confirmed'" style="display: grid;">
+            <button class="green" (click)="buttonMessage('confirmed')">Confirmed <img src="assets/icons/thumbs-up.svg" alt="..." /></button>
+            <button class="green" (click)="buttonMessage('online')">Get online <img src="assets/icons/phone-call.svg" alt="..." /></button>
+            <button class="green" (click)="buttonMessage('reschedule')">Reschedule <img src="assets/icons/refresh-ccw.svg" alt="..." /></button>
+          </div>
+          <div class="btns cancelled" *ngSwitchCase="'cancelled'" style="display: grid;">
+            <button class="orange" (click)="buttonMessage('cancelled')">Cancelled <img src="assets/icons/x-square.svg" alt="..." /></button>
+          </div>
+        </div>
       </div>
-      <div class="btns">
-        <button class="orange" (click)="buttonMessage()">Done <img src="assets/icons/check.svg" alt="..." /></button>
-      </div>
-
-      <!--
-      <div class="info">
-        <div class="bullet"></div>
-        <div class="ad"><p>dr. Jim Doe</p></div>
-        <div class="ad"><p>-</p></div>
-        <div class="ad"><p>01/07/2022</p></div>
-        <div class="ad"><p>-</p></div>
-        <div class="ad"><p>11:00am</p></div>
-      </div>
-      <div class="btns">
-        <button class="green">Confirmed <img src="assets/icons/thumbs-up.svg" alt="..." /></button>
-        <button  class="green">Get online <img src="assets/icons/phone-call.svg" alt="..." /></button>
-        <button  class="green">Reschedule <img src="assets/icons/refresh-ccw.svg" alt="..." /></button>
-      </div>
-
-      <div class="info">
-        <div class="bullet"></div>
-        <div class="ad"><p>dr. Jim Doe</p></div>
-        <div class="ad"><p>-</p></div>
-        <div class="ad"><p>01/07/2022</p></div>
-        <div class="ad"><p>-</p></div>
-        <div class="ad"><p>11:00am</p></div>
-      </div>
-      <div class="btns">
-        <button class="orange">Cancelled <img src="assets/icons/x-square.svg" alt="..." /></button>
-      </div>
-      -->
     </div>
+    <ng-template #noInformation >
+      <h5 class="noAppointment"> You don't have any appointment.</h5>
+    </ng-template>
   </div>
 </section>
