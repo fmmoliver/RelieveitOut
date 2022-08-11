@@ -7,7 +7,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 })
 
 export class AppointmentService {
-    private APIURL = 'http://localhost:3000/api';
+    private APIURL = 'http://localhost:3000/apiappointment';
     constructor(private http: HttpClient) { }
 
     private handleError(error: any) {
@@ -16,7 +16,7 @@ export class AppointmentService {
 
 
     getAppointments(newAppointment: Appointment): Promise<void | Appointment> {
-        return this.http.post(this.APIURL + '/appointment', newAppointment)
+        return this.http.post(this.APIURL + '/appointments', newAppointment)
             .toPromise()
             .then(response => response as Appointment)
             .catch(this.handleError)

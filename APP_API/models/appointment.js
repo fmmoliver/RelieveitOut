@@ -11,4 +11,4 @@ const appointSchema = new mongoose.Schema({
     });
     
 
-    module.exports = mongoose.model('appointSchema', appointSchema)
+  mongoose.model('appointment', appointSchema, 'appointments')
