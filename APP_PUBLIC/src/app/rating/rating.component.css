@@ -1,0 +1,59 @@
+.rating{
+  margin-top: 60px;
+  font-family: 'Montserrat','Roboto Slab';
+}
+
+.rating h4{
+  font-size: 1.5em;
+  margin-top: 1em;
+}
+
+form {
+  margin-top: 2em;
+  margin-left: 3em;
+}
+
+a, a:hover{
+  text-decoration: none;
+  padding-right: 0.4em;
+  cursor: pointer;
+  width: 195px;
+  height: 55px;
+  font-size: 15px;
+  color: #FFFFFF;
+  border-radius: 24px;
+  padding: 1em 0.9em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.orange {
+  background: #FC8370;
+  margin-left: 5em;
+}
+
+.green {
+  background: #2E7D32;
+
+}
+
+.btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-column-gap: 10px;
+  color: #FFFFFF;
+  margin-top: 2em;
+}
+.ratinginput {
+  margin-left: 1em;
+  padding: 0em;
+}
+
+.inputInfo {
+  font-size: 14px;
+}
+
+.col-sm-2{
+  text-align: right;
+  margin-bottom: 1.5em;
+}

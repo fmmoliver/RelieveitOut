@@ -1,0 +1,39 @@
+<section>
+  <div class="container rating">
+
+
+    <div class="row">
+      <div class="col col-lg-2 sidebar">
+        <h4>Rate our service</h4>
+      </div>
+    </div>
+    <div class="row content">
+      <form>
+        <div>
+          <label class="col-sm-2 docLabel">Doctor Name: &nbsp;</label>
+          <label class="col-sm-10 docName">Dr. Fernanda Oliveira</label><br>
+        </div>
+        <div>
+          <label class="col-sm-2 cliLabel">Client Name: &nbsp;</label>
+          <label class="col-sm-10 cliName">Luke Skywalker</label><br>
+        </div>
+        <div>
+          <label class="col-sm-2 ratingLabel">Rating: &nbsp;</label>
+          <input class="col-sm-1 ratinginput" id="rating" name="rating" required="required">
+          <label class="col-sm-8 inputInfo">The rating value must be between 0 and 5.</label>
+        </div>
+        <div class="btns">
+          <a routerLink="/appointments" class="orange">Cancel</a>
+          <a type="submit" class="green">Confirm</a>
+          <!--button type="submit" class="">Confirm your rate</button-->
+        </div>
+      </form>
+      <!--form (ngSubmit)="createNewRating(newRating)">
+        <label class="col-sm-2" for="doctorName">Doctor Name:&nbsp;</label>
+        <label class="col-sm-2" for="clientName">Client Name:&nbsp;</label>
+        <input class="col-sm-1" [(ngModel)]="newRating.rating" id="rating" name="rating" required="required">
+      </form-->
+    </div>
+  </div>
+</section>
+

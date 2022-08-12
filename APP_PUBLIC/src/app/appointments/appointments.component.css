@@ -1,3 +1,10 @@
+a, a:hover{
+  color: white;
+  text-decoration: none;
+  padding-right: 0.4em;
+  cursor: pointer;
+}
+
 .appointment{
   margin-top: 60px;
   font-family: 'Montserrat','Roboto Slab';
@@ -41,19 +48,17 @@
 
 div .done {
   display: none;
+  grid-column-gap: 10px;
 }
 
 div .confirmed {
   display: none;
+  grid-column-gap: 10px;
 }
 
 div .cancelled {
   display: none;
-}
-
-.btns{
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 20px;
+  grid-column-gap: 10px;
 }
 
 .content{
@@ -63,10 +68,41 @@ div .cancelled {
   grid-column-gap: 20px;
 }
 
-.content, .info, .btns{
+.content, .info {
   display: grid;
   line-height: 24px;
   grid-row-gap: 10px;
+}
+
+.orange {
+  background: #FC8370;
+  text-align: center;
+}
+
+.green {
+  background: #2E7D32;
+  text-align: center;
+}
+
+.appBtn{
+  width: 195px;
+  height: 55px;
+  font-size: 15px;
+  line-height: 20px;
+  color: #FFFFFF;
+  border-radius: 24px;
+  padding: 1em 0.9em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*
+.btns{
+  display: grid;
+  line-height: 24px;
+  grid-row-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
 }
 
 button {
@@ -76,24 +112,17 @@ button {
   align-items: center;
   padding: 9px 16px 9px 16px;
   gap: 15px;
-  width: 160px;
+  width: 185px;
   height: 55px;
   border: none;
   border-radius: 24px;
   line-height: 20px;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   font-family: 'Montserrat','Roboto Slab';
+  font-weight: bold;
 }
-
-.orange {
-  background: #FC8370;
-}
-
-.green {
-  background: #2E7D32;
-}
-
+*/
 @media only screen and (max-width: 1430px) {
   .btns{
     grid-column-gap: 10px;
@@ -151,7 +180,7 @@ button {
 }
 
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 475px) {
   .bullet{
     display: none;
   }
@@ -159,5 +188,13 @@ button {
   .btns{
     margin: 0 auto;
     width: fit-content;
+  }
+
+  .appBtn{
+    font-size: 20px;
+    line-height: 18px;
+    width: max-content;
+    height: initial;
+    text-decoration: none;
   }
 }

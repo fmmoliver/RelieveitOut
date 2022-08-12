@@ -28,7 +28,8 @@ import { AdminsignupComponent } from './adminsignup/adminsignup.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
-import { GenericListFilterModule } from 'generic-list-filter'
+import { GenericListFilterModule } from 'generic-list-filter';
+import { RatingComponent } from './rating/rating.component'
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { GenericListFilterModule } from 'generic-list-filter'
     AdminsignupComponent,
     AdminloginComponent,
     AdmindashboardComponent,
-    CreateAppointmentComponent
+    CreateAppointmentComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
@@ -72,6 +74,7 @@ import { GenericListFilterModule } from 'generic-list-filter'
       { path: 'create-appointment/:professionalId', component: CreateAppointmentComponent },
       { path: 'clientdashboard', component: ClientdashboardComponent },
       { path: 'professionaldashboard', component: ProfessionaldashboardComponent },
+      { path: 'rating', component: RatingComponent },
     ]),
     CalendarModule.forRoot({
       provide: DateAdapter,

@@ -33,6 +33,7 @@ const getAppointments = function (req, res) {
   }
 };
 
+
 module.exports = {
     createappointmnent,
     getAppointments

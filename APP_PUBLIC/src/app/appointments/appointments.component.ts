@@ -60,13 +60,13 @@ export class AppointmentsComponent implements OnInit {
   public buttonMessage(typeButton: string) {
     switch (typeButton) {
       case 'done':
-        this.toastr.info('Thank you for trusting us. Please don\'t forget to rate your session.');
+        this.toastr.success('Thank you for trusting us. Please don\'t forget to rate your session.');
         break;
       case 'rate':
         this.toastr.info('Wait next version!');
         break;
       case 'confirmed':
-        this.toastr.info('Your appointment was confirmed.');
+        this.toastr.success('Your appointment was confirmed.');
         break;
       case 'online':
         this.toastr.info('Wait next version!');
