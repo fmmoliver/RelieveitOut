@@ -1,12 +1,11 @@
 <section>
   <div class="container appointment">
 
-
     <div class="row">
       <div class="col col-lg-2 sidebar">
         <h4>My Appointments</h4>
       </div>
-      <div class="col col-lg-10 loggedUserInfo"> Client: Luke Skywalker</div>
+      <div class="col col-lg-10 loggedUserInfo"> Client: {{appointmentClient.clientName}}</div>
     </div>
 
     <div *ngIf="appointments.length > 0; else noInformation">

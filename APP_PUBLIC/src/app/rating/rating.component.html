@@ -8,24 +8,31 @@
       </div>
     </div>
     <div class="row content">
-      <form>
-        <div>
+      <form (ngSubmit)="InsertRate(nRating)">
+        <div class="form-group">
           <label class="col-sm-2 docLabel">Doctor Name: &nbsp;</label>
           <label class="col-sm-10 docName">Dr. Fernanda Oliveira</label><br>
         </div>
-        <div>
+        <div class="form-group">
           <label class="col-sm-2 cliLabel">Client Name: &nbsp;</label>
           <label class="col-sm-10 cliName">Luke Skywalker</label><br>
         </div>
-        <div>
+        <div class="form-group">
           <label class="col-sm-2 ratingLabel">Rating: &nbsp;</label>
-          <input class="col-sm-1 ratinginput" id="rating" name="rating" required="required">
-          <label class="col-sm-8 inputInfo">The rating value must be between 0 and 5.</label>
+          <select class="col-sm-1 ratinginput" [(ngModel)]="nRating.rating"  id="rating" name="rating" required="required">
+            <option>Select</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+          </select>
+          <label class="col-sm-9"></label>
         </div>
-        <div class="btns">
+        <div class="btns form-group">
           <a routerLink="/appointments" class="orange">Cancel</a>
-          <a type="submit" class="green">Confirm</a>
-          <!--button type="submit" class="">Confirm your rate</button-->
+          <!--a type="submit" class="green">Confirm</a-->
+          <button type="submit" class="green">Confirm</button>
         </div>
       </form>
       <!--form (ngSubmit)="createNewRating(newRating)">
