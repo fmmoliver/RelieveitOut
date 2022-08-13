@@ -24,14 +24,9 @@ export class AppointmentsComponent implements OnInit {
     doctorName: 'Dr. Fernanda Oliveira'
   }
 
-
   constructor(private AppointmentService: AppointmentService, private router: Router, private toastr: ToastrService){
 
   }
-
-  //I need to know the role of the user logged in
-  //if the role is Professional I have to search by doctorName
-  //if the role is Client I have to search by clientName
 
   ngOnInit(): void {
     this.fetchAppointments(this.appointmentClient);
@@ -79,4 +74,6 @@ export class AppointmentsComponent implements OnInit {
         break;
     }
   }
+
+
 }
