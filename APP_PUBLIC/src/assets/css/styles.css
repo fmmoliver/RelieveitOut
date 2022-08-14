@@ -11347,7 +11347,7 @@ p {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #fff; /*Fer was -> #212529; */
+  background-color: #cff4d2; /*Fer was -> #212529; */
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -11382,7 +11382,7 @@ p {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     border: none;
-    background-color: transparent;
+    background-color: #cff4d2;
     transition: padding-top 0.3s ease-in-out, padding-bottom 0.3s ease-in-out;
   }
   #mainNav .navbar-brand {
@@ -11390,7 +11390,7 @@ p {
     transition: font-size 0.3s ease-in-out;
   }
   #mainNav .navbar-brand img {
-    height: 5rem;
+    height: 4.3rem;
     transition: height 0.3s ease-in-out;
   }
   #mainNav.navbar-shrink {
@@ -13045,3 +13045,57 @@ background-color: #fc8370;
 }
 
 
+/*filter changes*/
+#customfilter .side-bar-wrapper {
+  width: 150px !important;
+}
+
+#customfilter .vl {
+  left: 40%;
+}
+
+#customfilter .side-menu-tabs {
+  width: auto !important;
+}
+
+#customfilter  .filter-side-menu .side-menu-tabs.selected  {
+  color: #fff !important;
+  background-color: #fc8370;
+
+}
+
+.side-menu-tabs:hover{
+  color: #fff !important;
+  background-color: #fc8370 !important;
+} 
+
+
+#customfilter .filter-color {
+  color: #fff !important;
+}
+
+#customfilter  .filter-content:hover, .filter-data-list .filter-content.selected{
+  color: #fff !important;
+  background-color: #fc8370 !important;
+}
+
+#customfilter  .reset-filter{
+  color: #FC8370 !important;
+  font-size: medium !important;
+}
+
+#customfilter .filter-list{
+    margin:5px  !important; 
+    border: 3px solid #fff !important;
+    color: #fff  !important;
+    font-size:1rem  !important;
+}
+
+#customfilter .filter-list-data{
+    width: 100% !important;
+}
+
+#customfilter .cancle-icon{
+    color: #fff;
+    font-weight: 2000;
+}

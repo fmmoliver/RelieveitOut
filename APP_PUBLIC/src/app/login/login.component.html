@@ -2,7 +2,7 @@
     <div class="container login-container">
         <div class="row">
             <div class="col-md-6 login-form-1" style="padding-left: 8%; padding-right: 8%;">
-                <h3>Login As <br>CLIENT</h3>
+                <h3>Login as Client</h3>
                 <form (ngSubmit)="LoginClient(ClientUser)">
                     <div class="form-group">
                         <input type="text" [(ngModel)]="ClientUser.email" name="email" id="email" class="form-control" placeholder="Your Email *" value="" />
@@ -25,7 +25,7 @@
                 <div class="login-logo">
                     <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
                 </div>
-                <h3>Login As PROFESSIONAL</h3>
+                <h3>Login as Professional</h3>
                 <form (ngSubmit)="LoginProfessional(ProfessionalUser)">
                     <div class="form-group">
                         <input type="text" [(ngModel)]="ProfessionalUser.email" name="email" id="email" class="form-control" placeholder="Your Email *" value="" />
@@ -46,13 +46,6 @@
                 </form>
             </div>
         </div>
-       
-        <div style="text-align:center; margin-top:5%;"> First time here? <button class="register"><a  class="aregister" href="#">Register  </a></button></div>
-        </div>
-        <div class="container team">
-                <div class="row justify-content-end">
-                    <div class="col-sm-4" >
-                        <button class="register"><a  class="aregister" href="#">Staff Only</a></button></div>
-            </div></div>
     
+    </div>
 </section>
