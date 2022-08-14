@@ -11,11 +11,11 @@
       <form (ngSubmit)="InsertRate(nRating)">
         <div class="form-group">
           <label class="col-sm-2 docLabel">Doctor Name: &nbsp;</label>
-          <label class="col-sm-10 docName">Dr. Fernanda Oliveira</label><br>
+          <label class="col-sm-10 docName">{{nRating.doctorName}}</label><br>
         </div>
         <div class="form-group">
           <label class="col-sm-2 cliLabel">Client Name: &nbsp;</label>
-          <label class="col-sm-10 cliName">Luke Skywalker</label><br>
+          <label class="col-sm-10 cliName">{{nRating.clientName}}</label><br>
         </div>
         <div class="form-group">
           <label class="col-sm-2 ratingLabel">Rating: &nbsp;</label>
@@ -31,15 +31,9 @@
         </div>
         <div class="btns form-group">
           <a routerLink="/appointments" class="orange">Cancel</a>
-          <!--a type="submit" class="green">Confirm</a-->
           <button type="submit" class="green">Confirm</button>
         </div>
       </form>
-      <!--form (ngSubmit)="createNewRating(newRating)">
-        <label class="col-sm-2" for="doctorName">Doctor Name:&nbsp;</label>
-        <label class="col-sm-2" for="clientName">Client Name:&nbsp;</label>
-        <input class="col-sm-1" [(ngModel)]="newRating.rating" id="rating" name="rating" required="required">
-      </form-->
     </div>
   </div>
 </section>
