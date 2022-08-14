@@ -5,10 +5,10 @@
                 <h3>Login as Client</h3>
                 <form (ngSubmit)="LoginClient(ClientUser)">
                     <div class="form-group">
-                        <input type="text" [(ngModel)]="ClientUser.email" name="email" id="email" class="form-control" placeholder="Your Email *" value="" />
+                        <input type="text" [(ngModel)]="ClientUser.email" name="email" id="emailCli" class="form-control" placeholder="Your Email *" value="" />
                     </div>
                     <div class="form-group">
-                        <input type="password" [(ngModel)]="ClientUser.password" name="password" id="password" class="form-control" placeholder="Your Password *" value="" />
+                        <input type="password" [(ngModel)]="ClientUser.password" name="password" id="passwordCli" class="form-control" placeholder="Your Password *" value="" />
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btnSubmit" value="Login" />
@@ -22,16 +22,16 @@
                 </form>
             </div>
             <div class="col-md-6 login-form-2"  style="padding-left: 8%; padding-right: 8%;">
-                <div class="login-logo">
+                <!--div class="login-logo">
                     <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
-                </div>
+                </div-->
                 <h3>Login as Professional</h3>
                 <form (ngSubmit)="LoginProfessional(ProfessionalUser)">
                     <div class="form-group">
-                        <input type="text" [(ngModel)]="ProfessionalUser.email" name="email" id="email" class="form-control" placeholder="Your Email *" value="" />
+                        <input type="text" [(ngModel)]="ProfessionalUser.email" name="email" id="emailPro" class="form-control" placeholder="Your Email *" value="" />
                     </div>
                     <div class="form-group">
-                        <input type="password" [(ngModel)]="ProfessionalUser.password" name="password" id="password" class="form-control" placeholder="Your Password *" value="" />
+                        <input type="password" [(ngModel)]="ProfessionalUser.password" name="password" id="passwordPro" class="form-control" placeholder="Your Password *" value="" />
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btnSubmit" value="Login" />
@@ -46,6 +46,6 @@
                 </form>
             </div>
         </div>
-    
+
     </div>
 </section>

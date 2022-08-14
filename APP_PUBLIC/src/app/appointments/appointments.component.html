@@ -5,35 +5,85 @@
       <div class="col col-lg-2 sidebar">
         <h4>My Appointments</h4>
       </div>
-      <div class="col col-lg-10 loggedUserInfo"> Client: {{appointmentClient.clientName}}</div>
+
+      <div [ngSwitch]="role">
+        <div *ngSwitchCase="'CLIENT'" >
+
+          <div class="col col-lg-12 loggedUserInfo">
+            Client: {{appointmentClient.clientName}}
+          </div>
+
+          <div *ngIf="appointments.length > 0; else noInformation">
+            <div class="row content" *ngFor="let appointment of appointments">
+              <div class="info">
+                <div class="bullet"></div>
+                <div class="ad">{{appointment.doctorName}} - {{appointment.speciality}}</div>
+                <div></div>
+                <div class="time"><p ng-non-bindable>{{appointment.dateTime | date:"yyyy-MM-dd ' at ' h:mm a"}}</p></div>
+              </div>
+              <div [ngSwitch]="appointment.status">
+                <div class="done" *ngSwitchCase="'done'" style="display: inline-flex;">
+                  <div class="appBtn orange"(click)="buttonMessage('done')"><a>Done</a><img src="assets/icons/check.svg" alt="..." /></div>
+                  <div class="appBtn orange"><a [routerLink]= "['/rating', appointment.doctorName, appointmentClient.clientName]">Rate the session </a><img src="assets/icons/starWhite.svg" alt="..." /></div>
+                </div>
+                <div class="confirmed" *ngSwitchCase="'confirmed'" style="display: inline-flex;">
+                  <div class="appBtn green"(click)="buttonMessage('confirmed')"><a>Confirmed </a><img src="assets/icons/thumbs-up.svg" alt="..." /></div>
+                  <div class="appBtn green"(click)="buttonMessage('online')"><a>Get online </a><img src="assets/icons/phone-call.svg" alt="..." /></div>
+                  <div class="appBtn green"(click)="buttonMessage('reschedule')"><a>Reschedule </a><img src="assets/icons/refresh-ccw.svg" alt="..." /></div>
+                </div>
+                <div class="cancelled" *ngSwitchCase="'cancelled'" style="display: inline-flex;">
+                  <div class="appBtn orange"(click)="buttonMessage('cancelled')"><a>Cancelled </a><img src="assets/icons/x-square.svg" alt="..." /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ng-template #noInformation >
+            <h5 class="noAppointment"> You don't have any appointment.</h5>
+          </ng-template>
+        </div>
+
+        <div *ngSwitchCase="'PROFESSIONAL'">
+          <div class="col col-lg-12 loggedUserInfo">
+            Professional: {{appointmentDoctor.doctorName}}
+          </div>
+
+          <div *ngIf="appointments.length > 0; else noInformationProf">
+            <div class="row content" *ngFor="let appointment of appointments">
+              <div class="info">
+                <div class="bullet"></div>
+                <div class="ad">{{appointment.clientName}}</div>
+                <div></div>
+                <div class="time"><p ng-non-bindable>{{appointment.dateTime | date:"yyyy-MM-dd ' at ' h:mm a"}}</p></div>
+              </div>
+              <div [ngSwitch]="appointment.status">
+                <div class="done" *ngSwitchCase="'done'" style="display: inline-flex;">
+                  <div class="appBtn orange"(click)="buttonMessage('doneProfessional')"><a>Done</a><img src="assets/icons/check.svg" alt="..." /></div>
+                </div>
+                <div class="confirmed" *ngSwitchCase="'confirmed'" style="display: inline-flex;">
+                  <div class="appBtn green"(click)="buttonMessage('confirmed')"><a>Confirmed </a><img src="assets/icons/thumbs-up.svg" alt="..." /></div>
+                  <div class="appBtn green"(click)="buttonMessage('online')"><a>Get online </a><img src="assets/icons/phone-call.svg" alt="..." /></div>
+                  <div class="appBtn green"(click)="buttonMessage('reschedule')"><a>Reschedule </a><img src="assets/icons/refresh-ccw.svg" alt="..." /></div>
+                </div>
+                <div class="cancelled" *ngSwitchCase="'cancelled'" style="display: inline-flex;">
+                  <div class="appBtn orange"(click)="buttonMessage('cancelled')"><a>Cancelled </a><img src="assets/icons/x-square.svg" alt="..." /></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <ng-template #noInformationProf >
+            <h5 class="noAppointment"> You don't have any appointment.</h5>
+          </ng-template>
+        </div>
+
+        <div *ngSwitchCase="'NOTLOGGED'">
+          <h5 class="noAppointment"> You must do login.</h5>
+        </div>
+
+      </div>
+
     </div>
 
-    <div *ngIf="appointments.length > 0; else noInformation">
-      <div class="row content" *ngFor="let appointment of appointments">
-        <div class="info">
-          <div class="bullet"></div>
-          <div class="ad">{{appointment.doctorName}} - {{appointment.speciality}}</div>
-          <div></div>
-          <div class="time"><p ng-non-bindable>{{appointment.dateTime | date:"yyyy-MM-dd ' at ' h:mm a"}}</p></div>
-        </div>
-        <div [ngSwitch]="appointment.status">
-          <div class="done" *ngSwitchCase="'done'" style="display: inline-flex;">
-            <div class="appBtn orange"(click)="buttonMessage('done')"><a>Done</a><img src="assets/icons/check.svg" alt="..." /></div>
-            <div class="appBtn orange"><a [routerLink]= "['/rating', appointment.doctorName, appointmentClient.clientName]">Rate the session </a><img src="assets/icons/starWhite.svg" alt="..." /></div>
-          </div>
-          <div class="confirmed" *ngSwitchCase="'confirmed'" style="display: inline-flex;">
-            <div class="appBtn green"(click)="buttonMessage('confirmed')"><a>Confirmed </a><img src="assets/icons/thumbs-up.svg" alt="..." /></div>
-            <div class="appBtn green"(click)="buttonMessage('online')"><a>Get online </a><img src="assets/icons/phone-call.svg" alt="..." /></div>
-            <div class="appBtn green"(click)="buttonMessage('reschedule')"><a>Reschedule </a><img src="assets/icons/refresh-ccw.svg" alt="..." /></div>
-          </div>
-          <div class="cancelled" *ngSwitchCase="'cancelled'" style="display: inline-flex;">
-            <div class="appBtn orange"(click)="buttonMessage('cancelled')"><a>Cancelled </a><img src="assets/icons/x-square.svg" alt="..." /></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <ng-template #noInformation >
-      <h5 class="noAppointment"> You don't have any appointment.</h5>
-    </ng-template>
   </div>
 </section>
