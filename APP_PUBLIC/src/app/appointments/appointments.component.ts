@@ -14,14 +14,17 @@ import { format, parseISO } from 'date-fns';
 export class AppointmentsComponent implements OnInit {
 
   appointments: Appointment[]
+  roleClient: boolean;
+  roleProfessional: boolean;
+  role: string;
+  userName: string;
 
   public appointmentClient: Appointment = {
-    clientName: 'Luke Skywalker'
-    //clientName: 'Fernanda'
+    clientName: ''
   }
 
   public appointmentDoctor: Appointment = {
-    doctorName: 'Dr. Fernanda Oliveira'
+    doctorName: ''
   }
 
   constructor(private AppointmentService: AppointmentService, private router: Router, private toastr: ToastrService){
@@ -29,7 +32,32 @@ export class AppointmentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.fetchAppointments(this.appointmentClient);
+    this.getUserDetails();
+  }
+
+  public getUserDetails () {
+    const details = JSON.parse(localStorage.getItem("userDeatils"));
+
+    console.log(details);
+
+    if (details.role === 'CLIENT') {
+      this.appointmentClient.clientName = details.username;
+      this.userName = details.username;
+      this.fetchAppointments(this.appointmentClient);
+      this.roleClient = true;
+      this.roleProfessional = false;
+      this.role = 'CLIENT';
+    } else if (details.role === 'PROFESSIONAL')  {
+      this.appointmentDoctor.doctorName = details.username;
+      this.userName = details.username;
+      this.fetchAppointments(this.appointmentDoctor);
+      this.roleProfessional = true;
+      this.roleClient = false;
+      this.role = 'PROFESSIONAL';
+    } else {
+      this.role = 'NOTLOGGED';
+    }
+
   }
 
   public fetchAppointments (newAppointment: Appointment): void{
@@ -56,6 +84,9 @@ export class AppointmentsComponent implements OnInit {
     switch (typeButton) {
       case 'done':
         this.toastr.success('Thank you for trusting us. Please don\'t forget to rate your session.');
+        break;
+      case 'doneProfessional':
+        this.toastr.success('Well done! Thank you for trusting us.');
         break;
       case 'rate':
         this.toastr.info('Wait next version!');
