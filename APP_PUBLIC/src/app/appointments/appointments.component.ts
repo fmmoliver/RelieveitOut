@@ -17,7 +17,6 @@ export class AppointmentsComponent implements OnInit {
 
   public appointmentClient: Appointment = {
     clientName: 'Luke Skywalker'
-    //clientName: 'Fernanda'
   }
 
   public appointmentDoctor: Appointment = {

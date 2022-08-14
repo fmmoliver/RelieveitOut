@@ -74,7 +74,7 @@ import { RatingComponent } from './rating/rating.component'
       { path: 'create-appointment/:professionalId', component: CreateAppointmentComponent },
       { path: 'clientdashboard', component: ClientdashboardComponent },
       { path: 'professionaldashboard', component: ProfessionaldashboardComponent },
-      { path: 'rating', component: RatingComponent },
+      { path: 'rating/:doctorname/:clientname', component: RatingComponent },
     ]),
     CalendarModule.forRoot({
       provide: DateAdapter,

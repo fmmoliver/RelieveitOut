@@ -19,7 +19,7 @@
         <div [ngSwitch]="appointment.status">
           <div class="done" *ngSwitchCase="'done'" style="display: inline-flex;">
             <div class="appBtn orange"(click)="buttonMessage('done')"><a>Done</a><img src="assets/icons/check.svg" alt="..." /></div>
-            <div class="appBtn orange"><a routerLink= "{{'/rating/'}}">Rate the session </a><img src="assets/icons/starWhite.svg" alt="..." /></div>
+            <div class="appBtn orange"><a [routerLink]= "['/rating', appointment.doctorName, appointmentClient.clientName]">Rate the session </a><img src="assets/icons/starWhite.svg" alt="..." /></div>
           </div>
           <div class="confirmed" *ngSwitchCase="'confirmed'" style="display: inline-flex;">
             <div class="appBtn green"(click)="buttonMessage('confirmed')"><a>Confirmed </a><img src="assets/icons/thumbs-up.svg" alt="..." /></div>

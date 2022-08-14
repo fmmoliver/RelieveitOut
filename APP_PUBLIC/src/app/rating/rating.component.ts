@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Rating } from '../models/rating';
 import { RatingService } from '../services/ratingservice';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -11,16 +11,18 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RatingComponent implements OnInit {
 
-  constructor(private RatingService: RatingService, private router: Router, private toastr: ToastrService) { }
+  constructor(private RatingService: RatingService, private router: Router, private toastr: ToastrService, private route: ActivatedRoute) { }
 
   public nRating: Rating = {
-    doctorName: 'Dr. Fernanda Oliveira',
-    clientName: 'Luke Skywalker',
+    doctorName: '',
+    clientName: '',
     dateTime: new Date(),
     rating: '',
   }
 
   ngOnInit(): void {
+    this.nRating.doctorName = this.route.snapshot.paramMap.get('doctorname');
+    this.nRating.clientName = this.route.snapshot.paramMap.get('clientname')
   }
 
   public InsertRate (newRating: Rating): void {
