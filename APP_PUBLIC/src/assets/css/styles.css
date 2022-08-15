@@ -13099,3 +13099,7 @@ background-color: #fc8370;
     color: #fff;
     font-weight: 2000;
 }
+
+.toast-info{
+  background-color: #fc8370 !important;
+}
