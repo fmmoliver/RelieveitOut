@@ -13103,3 +13103,31 @@ background-color: #fc8370;
 .toast-info{
   background-color: #fc8370 !important;
 }
+
+.crisilinefilterbtn {
+  width: 100%;
+  border: 0;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 6px;
+  background-color: #fc8370;
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.profeesionalDashboard {
+  background-color: #CDDECD;
+  padding: 25px;
+  border-radius: 4px;
+}
+
+.profeesionalDashboard > p:first-child {
+  font-family: 'Montserrat','Roboto Slab';
+  text-align: center;
+  font-size: 20px;
+}
+
+.profeesionalDashboard > p {
+  font-family: 'Montserrat','Roboto Slab';
+}

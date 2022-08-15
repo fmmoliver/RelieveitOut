@@ -74,6 +74,8 @@ delete(){
 }
 updateProfile(data)
 {
+  console.log(data, 'data')
+  if(data.Price !== undefined  && data.email !== '' && data.username !== '' && data.password !== "" && data.email !== "") {
   this.apiservice.updateProfile(data).subscribe(
     data =>{
       this.toaster.success("updated")
@@ -85,5 +87,9 @@ updateProfile(data)
 
     }
   )
+  } else {
+    this.toaster.error("Please enter all fields !!!!")
+  }
+
 }
 }

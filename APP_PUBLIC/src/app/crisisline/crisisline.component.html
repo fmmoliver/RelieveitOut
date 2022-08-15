@@ -4,46 +4,24 @@
 
       <div class="col col-lg-2 sidebar">
         <h4>All Meeting rooms</h4>
-        <p>Mental Health room</p>
-        <p>Anxiety room</p>
-        <p>Covid 19 room</p>
-        <p>Depression room</p>
+        <button class="crisilinefilterbtn" (click)="Filterlines('')">All</button>
+        <button class="crisilinefilterbtn" (click)="Filterlines('MENTALHEALTH')">Mental Health</button>
+        <button class="crisilinefilterbtn" (click)="Filterlines('ANXIETY')">Anxiety</button>
+        <button class="crisilinefilterbtn" (click)="Filterlines('COVID')">Covid 19</button>
+        <button class="crisilinefilterbtn" (click)="Filterlines('DEPRESSION')">Depression</button>
       </div>
-
-      <div class="col col-lg-1 "></div>
-
-      <div class="col col-lg-7" >
+      <div class="col col-lg-1"></div>
+      <div class="col col-lg-7">
         <div class="list">
-          <div class="item col-lg-12">
+          <div class="item col-lg-12" *ngFor="let crisisline of crisilinesFinal">
             <div class="name">
-              <p>Mental Health room</p>
+              <p>{{ crisisline.meetingroomname }}</p>
+              <span>{{ crisisline.roomtype }}</span>
             </div>
-            <div class="appBtn"> <a href="cal_appointment.html">Connect <br>with us</a></div>
-          </div>
-
-          <div class="item  col-lg-12">
-            <div class="name">
-              <p>Anxiety room</p>
-            </div>
-            <div class="appBtn">  <a href="cal_appointment.html">Connect <br>with us</a></div>
-          </div>
-
-          <div class="item  col-lg-12">
-            <div class="name">
-              <p>Covid 19 room</p>
-            </div>
-            <div class="appBtn">  <a href="cal_appointment.html">Connect <br>with us</a></div>
-          </div>
-
-          <div class="item  col-lg-12">
-            <div class="name">
-              <p>Depression room</p>
-            </div>
-            <div class="appBtn"> <a href="cal_appointment.html">Connect <br>with us</a></div>
+            <div class="appBtn"> <button class="crisilinefilterbtn" (click)="buttonMessage('online')">Connect <br>with us</button></div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>

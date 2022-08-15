@@ -6,16 +6,16 @@
                 <h3>Login As CLIENT</h3>
                
             </div> -->
-            <div class="col-md-6 offset-6 login-form-2" *ngFor="let users of filteredUser">
+            <div class="col-md-6 mx-auto profeesionalDashboard" *ngFor="let users of filteredUser">
                 <!-- <div class="login-logo">
                     <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
                 </div> -->
-                <h3>User Details</h3>
+                <p>User Details - Client</p>
                 <p *ngIf="users?.username">User Name : {{users?.username}}</p>
                 <p *ngIf="users?.password">Password : {{users?.password}}</p>
                 <p *ngIf="users?.email">Email : {{users?.email}}</p>
                 <p *ngIf="users?.city">City : {{users?.city}}</p>
-                <p *ngIf="users?.price">Price : {{users?.price}}</p>
+                <p *ngIf="users?.Price">Price : {{users?.Price}}</p>
                 <p *ngIf="users?.speciality">speciality : {{users?.speciality}}</p>
                 <button class="btn btn-dark" (click)="delete()">Remove Account</button> &nbsp;
                 <button class="btn btn-success" (click)="update()"> Update Account</button>
@@ -32,11 +32,11 @@
                 <h3>Login As CLIENT</h3>
                
             </div> -->
-            <div class="col-md-6 offset-6 login-form-2" *ngFor="let users of filteredUser">
+            <div class="col-md-6 offset-6 login-form-2 profeesionalDashboard mx-auto" *ngFor="let users of filteredUser">
                 <!-- <div class="login-logo">
                     <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
                 </div> -->
-                <h3>User Details</h3>
+                <p>User Details - Client</p>
                 <form (ngSubmit)="updateProfile(newClientUser)">
                   <div class="form-group">
                     <input [(ngModel)]="newClientUser.email" name="email" type="text" class="form-control" placeholder="Your Email *" value="" required />
@@ -51,17 +51,14 @@
                     <input [(ngModel)]="newClientUser.city" name="city" type="text" class="form-control" placeholder="Your city *" required />
                   </div>
                   <div class="form-group">
-                    <input [(ngModel)]="newClientUser.Price" name="price" type="text" class="form-control" placeholder="Price *" required />
+                    <input [(ngModel)]="newClientUser.Price" name="Price" type="text" class="form-control" placeholder="Price *" required />
                   </div>
                   <div class="form-group">
                     <input [(ngModel)]="newClientUser.speciality" name="speciality" type="text" class="form-control" placeholder="speciality *" required />
                   </div>
-                  <div class="form-group">
-                    <input name="confirmpassword" type="file" class="form-control" value="" />
-                  </div>
 
                   <div class="form-group">
-                    <input type="submit" name="buttonsignup" class="btnSubmit" value="Sign Up" />
+                    <input type="submit" name="buttonsignup" class="btnSubmit mx-auto d-block" value="Update" />
                   </div>
 
                 </form>

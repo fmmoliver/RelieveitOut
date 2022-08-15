@@ -32,6 +32,7 @@
   padding: 20px 30px;
   grid-column-gap: 20px;
   grid-row-gap: 120px;
+  height: 150px;
 }
 
 .name p {
@@ -40,8 +41,13 @@
   line-height: 25px;
   width: 120px;
   position: absolute;
-  top: 50%;
+  top: 40%;
   transform: translate(0, -50%);
+}
+
+.name span {
+  position: absolute;
+  bottom: 20px;
 }
 
 /*

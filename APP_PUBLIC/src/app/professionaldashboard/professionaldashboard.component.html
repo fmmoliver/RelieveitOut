@@ -5,11 +5,11 @@
                 <h3>Login As CLIENT</h3>
                
             </div> -->
-            <div class="col-md-6 offset-6 login-form-2" *ngFor="let users of filteredUser">
+            <div class="col-md-6 mx-auto profeesionalDashboard" *ngFor="let users of filteredUser">
                 <!-- <div class="login-logo">
                     <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
                 </div> -->
-                <h3>User Details</h3>
+                <p>User Details - Professional</p>
                 <p *ngIf="users?.username">User Name : {{users?.username}}</p>
                 <p *ngIf="users?.password">Password : {{users?.password}}</p>
                 <p *ngIf="users?.email">Email : {{users?.email}}</p>
@@ -26,8 +26,8 @@
 <section *ngIf="isedit">
     <div class="container login-container">
         <div class="row">
-            <div class="col-md-6 offset-6 login-form-2" *ngFor="let users of filteredUser">
-                <h3>User Details</h3>
+            <div class="col-md-6 offset-6 profeesionalDashboard mx-auto" *ngFor="let users of filteredUser">
+                <p>User Details - Professional</p>
                 <form (ngSubmit)="updateProfile(newProfessionalUser)">
                     <div class="form-group">
                         <input [(ngModel)]="newProfessionalUser.email" name="email" type="text" class="form-control" placeholder="Your Email *" value="" required />
@@ -42,17 +42,13 @@
                         <input [(ngModel)]="newProfessionalUser.city" name="city" type="text" class="form-control" placeholder="Your city *" required />
                     </div>
                     <div class="form-group">
-                        <input [(ngModel)]="newProfessionalUser.Price" name="price" type="text" class="form-control" placeholder="Price *" required />
+                        <input [(ngModel)]="newProfessionalUser.Price" name="Price" type="text" class="form-control" placeholder="Price *" required />
                     </div>
                     <div class="form-group">
                         <input [(ngModel)]="newProfessionalUser.speciality" name="speciality" type="text" class="form-control" placeholder="speciality *" required />
                     </div>
                     <div class="form-group">
-                        <input name="confirmpassword" type="file" class="form-control" value="" />
-                    </div>
-
-                    <div class="form-group">
-                        <input type="submit" class="btnSubmit" value="Update" />
+                        <input type="submit" class="btnSubmit mx-auto d-block" value="Update" />
                     </div>
 
 

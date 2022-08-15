@@ -8,6 +8,7 @@ require('./models/db');
 const userRouter = require('./routes/user')
 const appointmentRouter = require('./routes/appointment')
 const ratingRouter = require('./routes/rating')
+const crisilineRouter = require('./routes/crisisline')
 
 const app = express()
 app.use(logger('dev')); 
@@ -36,8 +37,16 @@ app.use('/apirating', (req, res, next) => {
   next();
 });
 
+app.use('/apicrisisline', (req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,DELETE,PUT');
+  next();
+});
+
 app.use('/api', userRouter);
 app.use('/apiappointment', appointmentRouter);
 app.use('/apirating', ratingRouter);
+app.use('/apicrisisline', crisilineRouter);
 
 module.exports = app;

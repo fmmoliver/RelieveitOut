@@ -18,3 +18,4 @@ mongoose.connection.on('connected', () => {
    require('./user');
    require('./appointment');
    require('./rating');
+   require('./crisisline')

@@ -66,6 +66,7 @@ export class ClientdashboardComponent implements OnInit {
   }
   updateProfile(data)
   {
+  if(data.Price !== undefined  && data.email !== '' && data.username !== '' && data.password !== "" && data.email !== "") {
     this.apiservice.updateProfile(data).subscribe(
       data =>{
         this.toaster.success("updated")
@@ -77,5 +78,8 @@ export class ClientdashboardComponent implements OnInit {
   
       }
     )
+  } else {
+    this.toaster.error("Please enter all fields !!!!")
   }
+}
 }
