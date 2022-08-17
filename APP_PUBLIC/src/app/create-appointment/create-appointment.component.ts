@@ -98,8 +98,8 @@ export class CreateAppointmentComponent implements OnInit {
       if (response) {
         this.events = (response as Appointment[]).map((appointmentDetails) => {
           return {
-            start: subDays(startOfDay(new Date(appointmentDetails.dateTime)), 1),
-            end: addDays(new Date(appointmentDetails.dateTime), 1),
+            start: startOfDay(new Date(appointmentDetails.dateTime)),
+            end: endOfDay(new Date(appointmentDetails.dateTime)),
             title: appointmentDetails.doctorName + ' - ' + appointmentDetails.speciality,
             color: { ...colors['red'] },
             actions: this.actions,
@@ -112,7 +112,6 @@ export class CreateAppointmentComponent implements OnInit {
           }
 
         })
-        this.toastr.success('Fetched Appointments', 'Success !!');
       } else {
 
       }
@@ -136,7 +135,15 @@ export class CreateAppointmentComponent implements OnInit {
   ];
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
-    this.toastr.success("Appointment Scheduled For " + this.doctorName + " For " + JSON.parse(localStorage.getItem("userDeatils")).username + " Successfully !!!")
+    if (events.length === 0) {
+      this.toastr.success("Appointment Scheduled For " + this.doctorName + " For " + JSON.parse(localStorage.getItem("userDeatils")).username + " at 10:00 AM", "Appointment Scheduled !")
+    } else {
+      const eventDetails = events[0]
+      console.log(events, 'events')
+      this.toastr.error("Already Scheduled For " + eventDetails.title + "", "Days Fully Booked !!")
+      // this.toastr.info("Exis")
+    }
+
   }
 
   eventTimesChanged({

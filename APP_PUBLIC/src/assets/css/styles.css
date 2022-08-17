@@ -13141,6 +13141,10 @@ background-color: #fc8370;
   background-color: #cff4fc !important;
   color: #000 !important;
 }
+
+.cal-month-view .cal-open-day-events {
+  display: none;
+}
 /* 
 a{
   color: #fc8370 !important;
