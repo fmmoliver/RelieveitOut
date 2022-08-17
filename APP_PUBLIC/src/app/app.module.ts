@@ -29,7 +29,8 @@ import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
 import { GenericListFilterModule } from 'generic-list-filter';
-import { RatingComponent } from './rating/rating.component'
+import { RatingComponent } from './rating/rating.component';
+import { CreateappointmentformComponent } from './createappointmentform/createappointmentform.component'
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { RatingComponent } from './rating/rating.component'
     AdminloginComponent,
     AdmindashboardComponent,
     CreateAppointmentComponent,
-    RatingComponent
+    RatingComponent,
+    CreateappointmentformComponent
   ],
   imports: [
     BrowserModule,
@@ -71,10 +73,11 @@ import { RatingComponent } from './rating/rating.component'
       { path: 'adminlogin', component: AdminloginComponent },
       { path: 'adminsignup', component: AdminsignupComponent },
       { path: 'admindashboard', component: AdmindashboardComponent },
-      { path: 'create-appointment/:professionalId', component: CreateAppointmentComponent },
+      { path: 'create-appointment/:professionalId/:doctorname', component: CreateAppointmentComponent },
       { path: 'clientdashboard', component: ClientdashboardComponent },
       { path: 'professionaldashboard', component: ProfessionaldashboardComponent },
       { path: 'rating/:doctorname/:clientname', component: RatingComponent },
+      { path: 'CreateAppointmentForm/:appointmentDate', component: CreateappointmentformComponent },
     ]),
     CalendarModule.forRoot({
       provide: DateAdapter,

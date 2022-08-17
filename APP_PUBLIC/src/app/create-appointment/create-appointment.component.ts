@@ -23,9 +23,11 @@ import {
 import { EventColor } from 'calendar-utils';
 
 import { User } from '../models/user';
-import { UserService } from '../services/userservice';
-import { Router } from '@angular/router';
+import { AppointmentService } from '../services/appointmentservice';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Appointment } from '../models/appointment';
+
 
 
 const colors: Record<string, EventColor> = {
@@ -67,7 +69,6 @@ export class CreateAppointmentComponent implements OnInit {
       label: '<i class="fas fa-fw fa-trash-alt"></i>',
       a11yLabel: 'Delete',
       onClick: ({ event }: { event: CalendarEvent }): void => {
-        // this.events = this.events.filter((iEvent) => iEvent !== event);
         this.handleEvent('Deleted', event);
       },
     },
@@ -77,21 +78,43 @@ export class CreateAppointmentComponent implements OnInit {
   public ProfessionalUser: User = {
     role: 'PROFESSIONAL'
   }
+  public doctorName = '';
 
-  constructor(private UserService: UserService, private router: Router, private toastr: ToastrService) {
+  public appointmentDoctor: Appointment = {
+    doctorName: ''
+  }
+
+  constructor(private appointmentService: AppointmentService, private router: Router, private toastr: ToastrService, private route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-    this.fetchProfessionals(this.ProfessionalUser)
+    this.fetchappointments(this.appointmentDoctor)
+    this.doctorName = this.route.snapshot.paramMap.get('doctorname');
   }
 
-  public fetchProfessionals(newUser: User): void {
-    this.UserService.getUsers(newUser).then((response) => {
+  public fetchappointments(newAppointment: Appointment): void {
+    this.appointmentService.getAppointments(null).then((response) => {
       if (response) {
-        this.professionals = response as User[];
+        this.events = (response as Appointment[]).map((appointmentDetails) => {
+          return {
+            start: subDays(startOfDay(new Date(appointmentDetails.dateTime)), 1),
+            end: addDays(new Date(appointmentDetails.dateTime), 1),
+            title: appointmentDetails.doctorName + ' - ' + appointmentDetails.speciality,
+            color: { ...colors['red'] },
+            actions: this.actions,
+            allDay: true,
+            resizable: {
+              beforeStart: true,
+              afterEnd: true,
+            },
+            draggable: true,
+          }
+
+        })
+        this.toastr.success('Fetched Appointments', 'Success !!');
       } else {
-        // this.toastr.error('Invalid Login Credentials !!!!', 'Login Failed');
+
       }
     });
   }
@@ -112,50 +135,51 @@ export class CreateAppointmentComponent implements OnInit {
     }
   ];
 
-  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {}
+  dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
+    this.toastr.success("Appointment Scheduled For " + this.doctorName + " For " + JSON.parse(localStorage.getItem("userDeatils")).username + " Successfully !!!")
+  }
 
   eventTimesChanged({
     event,
     newStart,
     newEnd,
   }: CalendarEventTimesChangedEvent): void {
-    // this.events = this.events.map((iEvent) => {
-    //   if (iEvent === event) {
-    //     return {
-    //       ...event,
-    //       start: newStart,
-    //       end: newEnd,
-    //     };
-    //   }
-    //   return iEvent;
-    // });
+    this.events = this.events.map((iEvent) => {
+      if (iEvent === event) {
+        return {
+          ...event,
+          start: newStart,
+          end: newEnd,
+        };
+      }
+      return iEvent;
+    });
     this.handleEvent('Dropped or resized', event);
   }
 
   handleEvent(action: string, event: CalendarEvent): void {
-    // this.modalData = { event, action };
-    // this.modal.open(this.modalContent, { size: 'lg' });
+    console.log('test')
   }
 
   addEvent(): void {
-    // this.events = [
-    //   ...this.events,
-    //   {
-    //     title: 'New event',
-    //     start: startOfDay(new Date()),
-    //     end: endOfDay(new Date()),
-    //     color: colors.red,
-    //     draggable: true,
-    //     resizable: {
-    //       beforeStart: true,
-    //       afterEnd: true,
-    //     },
-    //   },
-    // ];
+    this.events = [
+      ...this.events,
+      {
+        title: 'New event',
+        start: startOfDay(new Date()),
+        end: endOfDay(new Date()),
+        color: { ...colors['red'] },
+        draggable: true,
+        resizable: {
+          beforeStart: true,
+          afterEnd: true,
+        },
+      },
+    ];
   }
 
   deleteEvent(eventToDelete: CalendarEvent) {
-    // this.events = this.events.filter((event) => event !== eventToDelete);
+    this.events = this.events.filter((event) => event !== eventToDelete);
   }
 
   setView(view: CalendarView) {

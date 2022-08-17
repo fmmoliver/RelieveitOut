@@ -56,7 +56,7 @@
               <p><strong>{{professional.username}}</strong></p>
               <h6>{{professional.speciality}}</h6> 
             </div>
-            <div class="appBtn"> <a routerLink= "{{'/create-appointment/'+ professional._id}}}">Make an appointment</a></div>
+            <div class="appBtn"> <a routerLink= "{{'/create-appointment/'+ professional._id+'/'+professional.username}}}">Make an appointment</a></div>
            </div>
 
            <!-- "{{'/create-appointment/' + professional._id }}         -->
