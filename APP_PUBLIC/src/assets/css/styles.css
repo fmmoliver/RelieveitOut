@@ -13131,3 +13131,17 @@ background-color: #fc8370;
 .profeesionalDashboard > p {
   font-family: 'Montserrat','Roboto Slab';
 }
+
+.btn-primary{
+  background-color: #fc8370 !important;
+  border-color: #fff !important;
+}
+
+.btn:hover {
+  background-color: #cff4fc !important;
+  color: #000 !important;
+}
+/* 
+a{
+  color: #fc8370 !important;
+} */
