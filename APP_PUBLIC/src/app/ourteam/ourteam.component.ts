@@ -24,7 +24,7 @@ export class OurteamComponent implements OnInit {
   filterList = {
     city : ['Waterloo', 'Kitchener', 'Burlington', 'Toronto', 'Hamilton'],
     speciality: ['Trauma Focused', 'Art Therapy', 'Cognitive Behaviour', 'Hypnotherapist'],
-    rating:['>4.5','>4','>3'],
+    rating:['4.5','4','3'],
     session_duration:['one hour','two hours', 'more than two hours']
     //here you can add as many filters as you want.
     };  
@@ -55,120 +55,8 @@ export class OurteamComponent implements OnInit {
 
   }
 
-  // //for city
-  // temparray: any = [];
-  // newarray: any = [];
-  // onchange(event:any){
-  //   if(event.target.checked){
-  //     this.temparray= this.tempprofessional.filter((e:any)=> e.city == event.target.value);
-  //     this.professionals = [];
-  //     this.newarray.push(this.temparray);
-  //     for( let i=0;i<this.newarray.length;i++){
-  //       var firstarray = this.newarray[i];
-  //       console.log(firstarray);
-  //     for( let i=0; i<firstarray.length; i++){
-  //       var obj = firstarray[i];
-  //       this.professionals.push(obj);
-  //     }
-  //   }
-  //   }
-  //   else{
-  //     this.temparray= this.professionals.filter((e:any)=> e.city != event.target.value);
-  //     this.newarray = [];
-  //     this.professionals = [];
-  //     this.newarray.push(this.temparray);
-  //     for( let i=0;i<this.newarray.length;i++){
-  //       var firstarray = this.newarray[i];
-  //       console.log(firstarray);
-  //     for( let i=0; i<firstarray.length; i++){
-  //       var obj = firstarray[i];
-  //       this.professionals.push(obj);
-  //     }
-  //   }
+  
 
-  //   }
-  // }
-
-  // //for service 
-  // onchangeservice(event:any){
-  //   if(event.target.checked){
-  //     this.temparray= this.tempprofessional.filter((e:any)=> e.typeOfService == event.target.value);
-  //     this.professionals = [];
-  //     this.newarray.push(this.temparray);
-  //     for( let i=0;i<this.newarray.length;i++){
-  //       var firstarray = this.newarray[i];
-  //       console.log(firstarray);
-  //     for( let i=0; i<firstarray.length; i++){
-  //       var obj = firstarray[i];
-  //       this.professionals.push(obj);
-  //     }
-  //   }
-  //   }
-  //   else{
-  //     this.temparray= this.professionals.filter((e:any)=> e.typeOfService != event.target.value) ;
-  //     this.newarray = [];
-  //     this.professionals = [];
-  //     this.newarray.push(this.temparray);
-  //     for( let i=0;i<this.newarray.length;i++){
-  //       var firstarray = this.newarray[i];
-  //       console.log(firstarray);
-  //     for( let i=0; i<firstarray.length; i++){
-  //       var obj = firstarray[i];
-  //       this.professionals.push(obj);
-  //     }
-  //   }
-
-  //   }
-  // }
-
-
-  // //for filters
-
-  // checkboxcity:any = [
-  //   {
-  //     id:1,
-  //     type:"checkbox",
-  //     city: "Waterloo"
-  //   },
-  //   {
-  //     id:2,
-  //     type:"checkbox",
-  //     city: "Kitchener"
-  //   },
-  //   {
-  //     id:3,
-  //     type:"checkbox",
-  //     city: "Burlington"
-  //   },
-  //   {
-  //     id:4,
-  //     type:"checkbox",
-  //     city: "Toronto"
-  //   }
-  // ]
-
-  // checkboxservice:any = [
-  //   {
-  //     id:1,
-  //     type:"checkbox",
-  //     typeOfService: "Art Therapy"
-  //   },
-  //   {
-  //     id:2,
-  //     type:"checkbox",
-  //     typeOfService: "Trauma Focused"
-  //   },
-  //   {
-  //     id:3,
-  //     type:"checkbox",
-  //     typeOfService: "Hypnotherapist"
-  //   },
-  //   {
-  //     id:4,
-  //     type:"checkbox",
-  //     typeOfService: "Cognitive Behaviour"
-  //   }
-  // ]
 
   filterChange(appliedfilters){
 
@@ -176,6 +64,7 @@ export class OurteamComponent implements OnInit {
     this.city =   appliedfilters.appliedFilterValues.city;
     this.speciality = appliedfilters.appliedFilterValues.speciality;
     this.session_duration = appliedfilters.appliedFilterValues.session_duration;
+    this.rating = appliedfilters.appliedFilterValues.rating;
 
     if(this.city){
       this.professionals = this.professionals.filter(item=>item.city === this.city);
@@ -185,6 +74,9 @@ export class OurteamComponent implements OnInit {
     }
     if(this.session_duration){
       this.professionals = this.professionals.filter(item=>item.session_duration === this.session_duration);
+    }
+    if(this.rating){
+      this.professionals = this.professionals.filter(item=>item.rating >= this.rating);
     }
 
   }
