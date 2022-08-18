@@ -73,7 +73,7 @@ import { CreateappointmentformComponent } from './createappointmentform/createap
       { path: 'adminlogin', component: AdminloginComponent },
       { path: 'adminsignup', component: AdminsignupComponent },
       { path: 'admindashboard', component: AdmindashboardComponent },
-      { path: 'create-appointment/:professionalId/:doctorname', component: CreateAppointmentComponent },
+      { path: 'create-appointment/:professionalId/:doctorname/:speciality', component: CreateAppointmentComponent },
       { path: 'clientdashboard', component: ClientdashboardComponent },
       { path: 'professionaldashboard', component: ProfessionaldashboardComponent },
       { path: 'rating/:doctorname/:clientname', component: RatingComponent },

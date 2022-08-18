@@ -27,6 +27,7 @@ import { AppointmentService } from '../services/appointmentservice';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Appointment } from '../models/appointment';
+import * as moment from 'moment';
 
 
 
@@ -79,18 +80,32 @@ export class CreateAppointmentComponent implements OnInit {
     role: 'PROFESSIONAL'
   }
   public doctorName = '';
+  public doctorSpeciality = '';
 
   public appointmentDoctor: Appointment = {
     doctorName: ''
   }
 
-  constructor(private appointmentService: AppointmentService, private router: Router, private toastr: ToastrService, private route: ActivatedRoute) {
+  public newAppointment: Appointment = {
+    doctorName: '',
+    clientName: '',
+    speciality: '',
+    dateTime: null,
+    status: 'confirmed'
+  }
+
+  constructor(private appointmentService: AppointmentService,
+    private router: Router,
+    private toastr: ToastrService,
+    private route: ActivatedRoute
+  ) {
 
   }
 
   ngOnInit(): void {
-    this.fetchappointments(this.appointmentDoctor)
+    setTimeout(() => this.fetchappointments(this.appointmentDoctor), 2000)
     this.doctorName = this.route.snapshot.paramMap.get('doctorname');
+    this.doctorSpeciality = this.route.snapshot.paramMap.get('speciality');
   }
 
   public fetchappointments(newAppointment: Appointment): void {
@@ -118,25 +133,21 @@ export class CreateAppointmentComponent implements OnInit {
     });
   }
 
-  events: CalendarEvent[] = [
-    {
-      start: subDays(startOfDay(new Date()), 1),
-      end: addDays(new Date(), 1),
-      title: 'Fernanda Appointment Scheduled For 3 AM',
-      color: { ...colors['red'] },
-      actions: this.actions,
-      allDay: true,
-      resizable: {
-        beforeStart: true,
-        afterEnd: true,
-      },
-      draggable: true,
-    }
-  ];
+  events: CalendarEvent[] = [];
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (events.length === 0) {
-      this.toastr.success("Appointment Scheduled For " + this.doctorName + " For " + JSON.parse(localStorage.getItem("userDeatils")).username + " at 10:00 AM", "Appointment Scheduled !")
+     
+      this.newAppointment.doctorName = this.doctorName
+      this.newAppointment.clientName = JSON.parse(localStorage.getItem("userDeatils")).username
+      this.newAppointment.speciality = this.doctorSpeciality
+      this.newAppointment.dateTime = new Date(date)
+      this.appointmentService.createappointment(this.newAppointment).then((response) => {
+        this.toastr.success("Appointment Scheduled For " + this.doctorName + " For " + JSON.parse(localStorage.getItem("userDeatils")).username + " at 10:00 AM", "Appointment Scheduled !")
+        setTimeout(() => {
+          window.location.href = '/appointments'
+        }, 3000);
+      })
     } else {
       const eventDetails = events[0]
       console.log(events, 'events')

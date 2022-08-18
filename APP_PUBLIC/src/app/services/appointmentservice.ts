@@ -22,5 +22,12 @@ export class AppointmentService {
             .catch(this.handleError)
     }
 
+    createappointment(newAppointment: Appointment): Promise<void | Appointment> {
+        return this.http.post(this.APIURL + '/createnewappointment', newAppointment)
+            .toPromise()
+            .then(response => response as Appointment)
+            .catch(this.handleError)
+    }
+
 
 }
