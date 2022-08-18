@@ -28,7 +28,7 @@ import { AdminsignupComponent } from './adminsignup/adminsignup.component';
 import { AdminloginComponent } from './adminlogin/adminlogin.component';
 import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
 import { CreateAppointmentComponent } from './create-appointment/create-appointment.component';
-import { GenericListFilterModule } from 'generic-list-filter';
+import { GenericListFilterComponent } from './lib/generic-list-filter/lib/generic-list-filter.component'
 import { RatingComponent } from './rating/rating.component';
 import { CreateappointmentformComponent } from './createappointmentform/createappointmentform.component'
 
@@ -53,7 +53,8 @@ import { CreateappointmentformComponent } from './createappointmentform/createap
     AdmindashboardComponent,
     CreateAppointmentComponent,
     RatingComponent,
-    CreateappointmentformComponent
+    CreateappointmentformComponent,
+    GenericListFilterComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +62,6 @@ import { CreateappointmentformComponent } from './createappointmentform/createap
     FormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
-    GenericListFilterModule,
     RouterModule.forRoot([
       { path: '', component: HomepageComponent },
       { path: 'login', component: LoginComponent },
